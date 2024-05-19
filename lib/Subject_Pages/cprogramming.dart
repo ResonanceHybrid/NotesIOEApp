@@ -359,7 +359,7 @@ class CProgramming extends StatelessWidget {
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://drive.google.com/file/d/15wAwHR24QBdDOLVomMFjgrqmH-owjKI8/view?usp=drive_link');
+                    'https://notesioe.com/wp-content/uploads/2023/10/Computer-Programming.pdf');
               },
             ),
           ],

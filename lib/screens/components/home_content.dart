@@ -49,7 +49,7 @@ class HomeContent extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          "Guess what? Today’s a brilliant day\nto pretend we’re learning something new!",
+                          "Guess what? Today’s a great day\nto pretend we’re learning something new!",
                           style: TextStyle(
                             color: Colors.black54,
                             wordSpacing: 2.5,
