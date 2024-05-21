@@ -20,7 +20,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // Handle notifications received while the app is closed
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
     if (message.data['link'] != null) {
       navigatorKey.currentState?.pushNamed(message.data['link']);
@@ -73,8 +72,7 @@ class MyApp extends StatelessWidget {
                 builder: (_) => Articles(), settings: settings);
           case '/notification':
             return CupertinoPageRoute(
-                builder: (_) => NotificationPage(notifications: []),
-                settings: settings);
+                builder: (_) => NotificationPage(), settings: settings);
           default:
             return CupertinoPageRoute(
                 builder: (_) => AuthPage(), settings: settings);

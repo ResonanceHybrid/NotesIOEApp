@@ -39,30 +39,35 @@ class FirebaseAPI {
 
   static Future<void> _firebaseMessagingBackgroundHandler(
       RemoteMessage message) async {
-    print("Handling a background message: ${message.messageId}");
     await _saveNotification(message);
   }
 
   Future<void> _handleMessage(
       RemoteMessage message, BuildContext context) async {
-    String? link = message.data['link'];
+    await _saveNotification(message);
 
+    String? link = message.data['link'];
     if (link != null && !kIsWeb) {
-      // If the app is in the foreground, navigate to the specified link
       Navigator.pushNamed(context, link);
-    } else {
-      // If the app is in the background or closed, save the notification and handle it later
-      await _saveNotification(message);
     }
   }
 
   static Future<void> _saveNotification(RemoteMessage message) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> notifications = prefs.getStringList('notifications') ?? [];
-    notifications.add(jsonEncode({
-      'title': message.notification?.title ?? 'No Title',
-      'body': message.notification?.body ?? 'No Body',
-    }));
-    await prefs.setStringList('notifications', notifications);
+
+    bool notificationExists = notifications.any((notification) {
+      var decodedNotification = jsonDecode(notification);
+      return decodedNotification['title'] == message.notification?.title &&
+          decodedNotification['body'] == message.notification?.body;
+    });
+
+    if (!notificationExists) {
+      notifications.add(jsonEncode({
+        'title': message.notification?.title ?? 'No Title',
+        'body': message.notification?.body ?? 'No Body',
+      }));
+      await prefs.setStringList('notifications', notifications);
+    }
   }
 }
