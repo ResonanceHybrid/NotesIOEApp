@@ -1,8 +1,6 @@
-// Your updated googlesignin.dart file
-// I've enhanced error handling for different scenarios
-
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -12,36 +10,57 @@ class AuthService {
 
   Future<void> signInWithGoogle(BuildContext context) async {
     try {
-      await _googleSignIn.signOut();
-      _updatePreviousRoute(context);
-      _showLoadingIndicator(context);
+      if (await _isInternetConnected()) {
+        await _googleSignIn.signOut();
+        _updatePreviousRoute(context);
 
-      final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
+        final GoogleSignInAccount? googleSignInAccount =
+            await _googleSignIn.signIn();
 
-      if (googleSignInAccount != null) {
-        final GoogleSignInAuthentication googleSignInAuthentication =
-            await googleSignInAccount.authentication;
+        if (googleSignInAccount != null) {
+          final GoogleSignInAuthentication? googleSignInAuthentication =
+              await googleSignInAccount.authentication;
 
-        final AuthCredential credential = GoogleAuthProvider.credential(
-          accessToken: googleSignInAuthentication.accessToken,
-          idToken: googleSignInAuthentication.idToken,
-        );
+          if (googleSignInAuthentication != null) {
+            final AuthCredential credential = GoogleAuthProvider.credential(
+              accessToken: googleSignInAuthentication.accessToken,
+              idToken: googleSignInAuthentication.idToken,
+            );
 
-        await FirebaseAuth.instance.signInWithCredential(credential);
+            await FirebaseAuth.instance.signInWithCredential(credential);
+
+            // Dismiss the loading indicator if it's shown
+            _dismissLoadingIndicator(context);
+          } else {
+            _handleSignInError(
+                context, 'Google sign-in authentication failed.');
+          }
+        } else {
+          _handleSignInError(
+              context, 'Sign-in process was cancelled by the user.');
+        }
       } else {
-        _handleSignInError(
-            context, 'Sign-in process was cancelled by the user.');
+        _handleSignInError(context,
+            'No internet connection. Please connect to the internet and try again.');
       }
     } on SocketException {
       _handleSignInError(context,
           'No internet connection. Please connect to the internet and try again.');
+    } on PlatformException catch (e) {
+      _handleSignInError(
+          context, 'An error occurred during sign-in: ${e.message}');
     } catch (error) {
-      _handleSignInError(context, 'An error occurred during sign-in.');
-    } finally {
-      if (Navigator.canPop(context)) {
-        Navigator.of(context, rootNavigator: true).pop();
-      }
+      _handleSignInError(
+          context, 'An unexpected error occurred during sign-in.');
+    }
+  }
+
+  Future<bool> _isInternetConnected() async {
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+    } on SocketException catch (_) {
+      return false;
     }
   }
 
@@ -49,25 +68,21 @@ class AuthService {
     _previousRoute = ModalRoute.of(context)?.settings.name;
   }
 
-  void _showLoadingIndicator(BuildContext context) {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return Center(child: CircularProgressIndicator());
-      },
-    );
+  void _dismissLoadingIndicator(BuildContext context) {
+    if (Navigator.canPop(context)) {
+      Navigator.of(context, rootNavigator: true).pop();
+    }
   }
 
-  void _handleSignInError(BuildContext context, dynamic error) {
-    print('Sign-in error: $error');
+  void _handleSignInError(BuildContext context, String errorMessage) {
+    print('Sign-in error: $errorMessage');
 
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text('Sign-In Error'),
-          content: Text(error.toString()),
+          content: Text(errorMessage),
           actions: [
             TextButton(
               child: Text('OK'),

@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _pages = [
       HomeContent(),
       Demo(),
-      NotificationPage(notifications: notifications),
+      NotificationPage(),
       DownloadPage(),
     ];
   }
@@ -54,26 +54,26 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavyBarItem(
             icon: Icon(Icons.home),
             title: Text('Home'),
-            activeColor: kpink,
-            inactiveColor: Colors.grey[500],
+            activeColor: kblue,
+            inactiveColor: Colors.grey[600],
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.read_more),
             title: Text('Quizes'),
-            inactiveColor: Colors.grey[500],
-            activeColor: kpink,
+            inactiveColor: Colors.grey[600],
+            activeColor: kblue,
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.notification_add),
             title: Text('Notification'),
-            inactiveColor: Colors.grey[500],
-            activeColor: kpink,
+            inactiveColor: Colors.grey[600],
+            activeColor: kblue,
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.download),
             title: Text('Downloads'),
-            inactiveColor: Colors.grey[500],
-            activeColor: kpink,
+            inactiveColor: Colors.grey[600],
+            activeColor: kblue,
           ),
         ],
       ),

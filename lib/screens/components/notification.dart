@@ -6,11 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ioe/constants.dart';
 
 class NotificationPage extends StatefulWidget {
-  final List<String> notifications;
-
-  const NotificationPage({Key? key, required this.notifications})
-      : super(key: key);
-
   @override
   _NotificationPageState createState() => _NotificationPageState();
 }
