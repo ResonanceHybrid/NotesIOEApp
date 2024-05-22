@@ -65,11 +65,138 @@ class EngineeringPhysics extends StatelessWidget {
 
   Widget _buildNotesTab(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        InsideButtons(
+          text: 'Oscillation',
+          fileSize: '6',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/oscillation.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Wave Motion',
+          fileSize: '2',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/wave-motion.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Capacitor',
+          fileSize: '5',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/capacitor.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Acoustic',
+          fileSize: '2',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/acoustic.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Optics',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/optics.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Fiber Optics',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/fiber-optics.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Interference',
+          fileSize: '4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/interference.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Polarization',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/polarization.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Diffraction',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/diffraction.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Electrostatics',
+          fileSize: '5',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/electrostatic.pdf');
+          },
+        ),
 
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Photon and Wave Matter',
+          fileSize: '2',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/photos-and-Waves.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Electromagnetism',
+          fileSize: '8',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/electromagnetism.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Electromagnetic Wave',
+          fileSize: '2',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/electromagnetic-waves.pdf');
+          },
+        ),
         // Add more InsideButtons as needed
       ],
     );
