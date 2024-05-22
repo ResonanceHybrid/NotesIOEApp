@@ -65,12 +65,38 @@ class CProgramming extends StatelessWidget {
 
   Widget _buildNotesTab(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
-
-        // Add more InsideButtons as needed
+        InsideButtons(
+          text: 'Pattern Codes',
+          fileSize: '0.4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/PATTERNS-OF-C.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Sum Of Series Codes',
+          fileSize: '0.2',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Sum-of-Series.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Frequently Asked Questions',
+          fileSize: '6',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/C-programmingFAQs.pdf');
+          },
+        ),
+        // Add more InsideButtons as neede
       ],
     );
   }
