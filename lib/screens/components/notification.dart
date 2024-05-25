@@ -17,13 +17,10 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   void initState() {
     super.initState();
-    _loadNotifications();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _loadNotifications();
+    // Start loading after 500 milliseconds
+    Timer(Duration(milliseconds: 500), () {
+      _loadNotifications();
+    });
   }
 
   Future<void> _loadNotifications() async {
