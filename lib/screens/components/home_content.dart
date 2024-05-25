@@ -156,9 +156,8 @@ class HomeContent extends StatelessWidget {
                         } else if (products[index].title == "IOE Questions") {
                           navigatorKey.currentState
                               ?.pushNamed('/ioe_questions');
-                        } else if (products[index].title == "+2 Notes") {
-                          navigatorKey.currentState
-                              ?.pushNamed('/college_notes');
+                        } else if (products[index].title == "NEC") {
+                          navigatorKey.currentState?.pushNamed('/nec');
                         } else if (products[index].title == "News/Results") {
                           navigatorKey.currentState?.pushNamed('/news_results');
                         } else if (products[index].title ==

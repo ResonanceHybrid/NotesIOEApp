@@ -38,10 +38,10 @@ List<Product> products = [
   ),
   Product(
     id: 4,
-    title: "+2 Notes",
+    title: "NEC Syllabus",
     image: "assets/images/collegenotes.png",
     color: Color(0xFF9ba0fc),
-    courses: "Moj Gara",
+    courses: "License Chaidaina?",
   ),
   Product(
     id: 4,

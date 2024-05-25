@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ioe/LoginPages/authpage.dart';
+import 'package:ioe/NCE/NECSyllabus.dart';
 import 'package:ioe/screens/components/notification.dart';
-import 'package:ioe/College_Notes/College_Notes.dart';
 import 'package:ioe/FirebaseAPI/firebase_options.dart';
 import 'package:ioe/FirebaseAPI/firebaseapi.dart';
 import 'package:ioe/IOE_Questions_Page/ioe_questions.dart';
@@ -61,9 +61,9 @@ class MyApp extends StatelessWidget {
           case '/ioe_questions':
             return CupertinoPageRoute(
                 builder: (_) => IOEQuestions(), settings: settings);
-          case '/college_notes':
+          case '/nce':
             return CupertinoPageRoute(
-                builder: (_) => CollegeNotes(), settings: settings);
+                builder: (_) => NECSyllabus(), settings: settings);
           case '/news_results':
             return CupertinoPageRoute(
                 builder: (_) => NewsResults(), settings: settings);
