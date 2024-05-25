@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ioe/IOE_Syllabys_Pages/archsyllabys.dart';
-import 'package:ioe/IOE_Syllabys_Pages/bctsyllabus.dart';
-import 'package:ioe/IOE_Syllabys_Pages/bcesyllabys.dart';
-import 'package:ioe/IOE_Syllabys_Pages/belsyllabus.dart';
-import 'package:ioe/IOE_Syllabys_Pages/beisyllabus.dart';
-import 'package:ioe/IOE_Syllabys_Pages/bmesyllabys.dart';
-import 'package:ioe/IOE_Syllabys_Pages/geomatics.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
+import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/otherpageappbar.dart';
 
-class IOESyllabus extends StatelessWidget {
-  const IOESyllabus({Key? key}) : super(key: key);
+class NECSyllabus extends StatelessWidget {
+  const NECSyllabus({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: OtherPageAppBar(
-        heading: 'IOE Syllabus',
+        heading: 'NEC Syllabus',
         rightIcon: Icons.home,
         onRightIconTap: () {
           Navigator.popUntil(context, ModalRoute.withName('/'));
@@ -31,10 +25,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Computer Engineering (BCT)',
               icon: Icons.computer,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BCTSyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Computer_NEC.pdf');
               },
             ),
             SizedBox(height: 10.0),
@@ -42,10 +34,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Civil Engineering (BCE)',
               icon: Icons.construction,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BCESyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Civil_NEC.pdf');
               },
             ),
             SizedBox(height: 10.0),
@@ -53,10 +43,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Electronics and Communication (BEI)',
               icon: Icons.signal_cellular_connected_no_internet_4_bar_outlined,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BEISyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Electronics_NEC.pdf');
               },
             ),
             SizedBox(height: 10.0),
@@ -64,10 +52,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Electrical Engineering (BEL)',
               icon: Icons.connect_without_contact,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BELSyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Electrical_NEC.pdf');
               },
             ),
             SizedBox(height: 10.0),
@@ -75,10 +61,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Mechanical Engineering (BME)',
               icon: Icons.car_repair,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BMESyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Mechanical_NEC.pdf');
               },
             ),
             SizedBox(height: 10.0),
@@ -86,10 +70,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Architecture Engineering (B.Arch)',
               icon: Icons.design_services,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BArchSyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Architecture_NEC.pdf');
               },
             ),
             SizedBox(height: 10.0),
@@ -97,11 +79,8 @@ class IOESyllabus extends StatelessWidget {
               text: 'Geomatics Engineering (BGE)',
               icon: Icons.landscape,
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => GeomaticsEngineeringSyllabus()),
-                );
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/05/Geomatics_NEC.pdf');
               },
             ),
           ],
