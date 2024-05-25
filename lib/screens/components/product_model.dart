@@ -44,14 +44,14 @@ List<Product> products = [
     courses: "License Chaidaina?",
   ),
   Product(
-    id: 4,
+    id: 5,
     title: "News/Results",
     image: "assets/images/news.png",
     color: Color(0xFF6bd98b),
     courses: 'Mah Timro RONB!',
   ),
   Product(
-    id: 4,
+    id: 6,
     title: "Helpful Articles",
     image: "assets/images/articles.png",
     color: Color(0xFFffd166),
