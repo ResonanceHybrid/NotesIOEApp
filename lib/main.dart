@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
           case '/ioe_questions':
             return CupertinoPageRoute(
                 builder: (_) => IOEQuestions(), settings: settings);
-          case '/nce':
+          case '/nec':
             return CupertinoPageRoute(
                 builder: (_) => NECSyllabus(), settings: settings);
           case '/news_results':
