@@ -17,10 +17,7 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   void initState() {
     super.initState();
-    _loadNotificationsWithDelay();
-  }
-
-  Future<void> _loadNotificationsWithDelay() async {
+    // Start loading after 500 milliseconds
     Timer(Duration(milliseconds: 500), () {
       _loadNotifications();
     });
@@ -32,6 +29,11 @@ class _NotificationPageState extends State<NotificationPage> {
       notifications = prefs.getStringList('notifications') ?? [];
       isLoading = false;
     });
+  }
+
+  Future<void> _refreshNotifications() async {
+    await Future.delayed(Duration(milliseconds: 500));
+    await _loadNotifications();
   }
 
   @override
@@ -51,10 +53,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   ? _buildLoadingAnimation()
                   : RefreshIndicator(
                       color: kblue,
-                      onRefresh: () async {
-                        await Future.delayed(Duration(seconds: 1));
-                        await _loadNotifications();
-                      },
+                      onRefresh: _refreshNotifications,
                       child: ListView.builder(
                         itemCount:
                             notifications.isEmpty ? 1 : notifications.length,
@@ -125,8 +124,10 @@ class _NotificationPageState extends State<NotificationPage> {
 class NotificationTile extends StatelessWidget {
   final String title;
   final String body;
+  final String? link;
 
-  const NotificationTile({Key? key, required this.title, required this.body})
+  const NotificationTile(
+      {Key? key, required this.title, required this.body, this.link})
       : super(key: key);
 
   @override
@@ -171,7 +172,9 @@ class NotificationTile extends StatelessWidget {
           ),
           trailing: Icon(Icons.arrow_forward_ios),
           onTap: () {
-            // Handle tap if necessary
+            if (link != null && link!.isNotEmpty) {
+              Navigator.pushNamed(context, link!);
+            }
           },
         ),
       ),

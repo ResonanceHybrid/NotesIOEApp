@@ -1,8 +1,8 @@
-import 'dart:async';
 import 'dart:convert';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:ioe/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FirebaseAPI {
@@ -27,11 +27,11 @@ class FirebaseAPI {
     );
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      _handleMessage(message, context);
+      _handleMessage(message);
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      _handleMessage(message, context);
+      _handleMessage(message);
     });
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -42,13 +42,12 @@ class FirebaseAPI {
     await _saveNotification(message);
   }
 
-  Future<void> _handleMessage(
-      RemoteMessage message, BuildContext context) async {
+  Future<void> _handleMessage(RemoteMessage message) async {
     await _saveNotification(message);
 
     String? link = message.data['link'];
     if (link != null && !kIsWeb) {
-      Navigator.pushNamed(context, link);
+      navigatorKey.currentState?.pushNamed(link);
     }
   }
 
@@ -66,6 +65,7 @@ class FirebaseAPI {
       notifications.add(jsonEncode({
         'title': message.notification?.title ?? 'No Title',
         'body': message.notification?.body ?? 'No Body',
+        'link': message.data['link'] ?? ''
       }));
       await prefs.setStringList('notifications', notifications);
     }
