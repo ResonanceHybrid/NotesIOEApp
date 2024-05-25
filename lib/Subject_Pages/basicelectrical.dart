@@ -68,7 +68,7 @@ class BasicElectricalEngineering extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
         InsideButtons(
-          text: 'Chapter 1 - General Electriacl Signal',
+          text: 'Chapter 1 - General Electriacal Signal',
           fileSize: '11',
           icon: Icons.arrow_forward,
           onTap: () async {
