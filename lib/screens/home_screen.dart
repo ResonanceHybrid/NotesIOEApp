@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:ioe/constants.dart';
@@ -5,6 +6,7 @@ import 'package:ioe/screens/components/downloads.dart';
 import 'package:ioe/screens/components/demo.dart';
 import 'package:ioe/screens/components/home_content.dart';
 import 'package:ioe/screens/components/notification.dart';
+import 'package:ioe/screens/components/search.dart';
 import 'package:ioe/screens/components/sidebarnav.dart';
 
 void main() {
@@ -131,12 +133,20 @@ class AppBarTop extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) =>
+                      SearchLogic(), // Replace with your search box page widget
+                ),
+              );
+            },
             icon: Icon(
-              Icons.person,
-              color: Colors.white, // Adjust icon color
+              Icons.search,
+              color: Colors.white,
             ),
-          ),
+          )
         ],
       ),
     );
