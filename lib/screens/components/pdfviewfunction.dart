@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -191,6 +192,10 @@ class _PDFViewPageState extends State<PDFViewPage> {
             },
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(50.0), // Adjust the height as needed
+          child: BannerAdWidget(), // Your ad widget here
+        ),
       ),
       body: Column(
         children: [
