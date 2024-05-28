@@ -2,8 +2,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:ioe/LoginPages/authpage.dart';
 import 'package:ioe/NCE/NECSyllabus.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/notification.dart';
 import 'package:ioe/FirebaseAPI/firebase_options.dart';
 import 'package:ioe/FirebaseAPI/firebaseapi.dart';
@@ -13,11 +15,15 @@ import 'package:ioe/IOE_Notes_Page/ioenotes.dart';
 import 'package:ioe/constants.dart';
 import 'package:ioe/screens/Articles.dart';
 import 'package:ioe/screens/News_Results.dart';
+import 'package:provider/provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final initFuture = MobileAds.instance.initialize();
+  final adState = AdState(initFuture);
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
@@ -26,7 +32,12 @@ void main() async {
     }
   });
 
-  runApp(MyApp());
+  runApp(
+    Provider.value(
+      value: adState,
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

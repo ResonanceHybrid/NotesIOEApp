@@ -171,10 +171,8 @@ class _SearchLogicState extends State<SearchLogic> {
   void _searchSubjects(String query) {
     setState(() {
       if (query.isEmpty) {
-        // If the query is empty, show all subjects
         filteredSubjects = allSubjects;
       } else {
-        // Filter subjects based on whether they start with the query
         filteredSubjects = allSubjects
             .where((subject) =>
                 subject.toLowerCase().startsWith(query.toLowerCase()))
