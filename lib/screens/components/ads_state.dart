@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
 import 'package:provider/provider.dart';
 
 class AdState {
@@ -16,13 +15,7 @@ class AdState {
       ? 'ca-app-pub-3940256099942544/8691691433'
       : 'ca-app-pub-3940256099942544/1033173712';
 
-  String get rewardedAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/5224354917'
-      : 'ca-app-pub-3940256099942544/5354046379';
-
   BannerAdListener get bannerAdListener => _bannerAdListener;
-  // InterstitialAdListener get interstitialAdListener => _interstitialAdListener;
-  // RewardedAdListener get rewardedAdListener => _rewardedAdListener;
 
   final BannerAdListener _bannerAdListener = BannerAdListener(
     onAdLoaded: (Ad ad) {
@@ -48,50 +41,35 @@ class AdState {
     },
   );
 
-  // final InterstitialAdListener _interstitialAdListener = InterstitialAdListener(
-  //   onAdLoaded: (Ad ad) {
-  //     print('Interstitial Ad loaded: ${ad.adUnitId}.');
-  //   },
-  //   onAdFailedToLoad: (Ad ad, LoadAdError error) {
-  //     print('Interstitial Ad failed to load: ${ad.adUnitId}, Error: $error');
-  //   },
-  //   onAdOpened: (Ad ad) {
-  //     print('Interstitial Ad opened: ${ad.adUnitId}.');
-  //   },
-  //   onAdClosed: (Ad ad) {
-  //     print('Interstitial Ad closed: ${ad.adUnitId}.');
-  //   },
-  //   onAdImpression: (Ad ad) {
-  //     print('Interstitial Ad impression: ${ad.adUnitId}.');
-  //   },
-  //   onAdClicked: (Ad ad) {
-  //     print('Interstitial Ad clicked: ${ad.adUnitId}.');
-  //   },
-  // );
+  InterstitialAd? _interstitialAd;
 
-  // final RewardedAdListener _rewardedAdListener = RewardedAdListener(
-  //   onAdLoaded: (Ad ad) {
-  //     print('Rewarded Ad loaded: ${ad.adUnitId}.');
-  //   },
-  //   onAdFailedToLoad: (Ad ad, LoadAdError error) {
-  //     print('Rewarded Ad failed to load: ${ad.adUnitId}, Error: $error');
-  //   },
-  //   onAdOpened: (Ad ad) {
-  //     print('Rewarded Ad opened: ${ad.adUnitId}.');
-  //   },
-  //   onAdClosed: (Ad ad) {
-  //     print('Rewarded Ad closed: ${ad.adUnitId}.');
-  //   },
-  //   onAdImpression: (Ad ad) {
-  //     print('Rewarded Ad impression: ${ad.adUnitId}.');
-  //   },
-  //   onAdClicked: (Ad ad) {
-  //     print('Rewarded Ad clicked: ${ad.adUnitId}.');
-  //   },
-  //   onUserEarnedReward: (Ad ad, RewardItem reward) {
-  //     print('User earned reward: ${reward.amount} ${reward.type}');
-  //   },
-  // );
+  void loadInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: interstitialAdUnitId,
+      request: AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (InterstitialAd ad) {
+          print('Interstitial Ad loaded: ${ad.adUnitId}.');
+          _interstitialAd = ad;
+          _interstitialAd!.setImmersiveMode(true);
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          print('Interstitial Ad failed to load: $error');
+          _interstitialAd = null;
+        },
+      ),
+    );
+  }
+
+  void showInterstitialAd() {
+    if (_interstitialAd != null) {
+      _interstitialAd!.show();
+      _interstitialAd = null; // Load a new ad for next time
+    } else {
+      print("Interstitial Ad wasn't ready yet.");
+      loadInterstitialAd(); // Attempt to load another ad
+    }
+  }
 }
 
 class BannerAdWidget extends StatefulWidget {
