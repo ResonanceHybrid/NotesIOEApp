@@ -4,19 +4,18 @@ import 'package:ioe/constants.dart';
 class MyButtons extends StatelessWidget {
   final Function()? onTap;
   final String text;
-  final bool isLoading; // Add isLoading parameter
-
+  final bool isLoading;
   const MyButtons({
     Key? key,
     required this.onTap,
     required this.text,
-    required this.isLoading, // Ensure isLoading is required
+    required this.isLoading,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: isLoading ? null : onTap, // Disable tap when loading
+      onTap: isLoading ? null : onTap,
       child: Container(
         padding: EdgeInsets.all(25),
         margin: EdgeInsets.symmetric(horizontal: 25),

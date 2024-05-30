@@ -53,6 +53,9 @@ dependencies:
   flutter_local_notifications: ^17.1.2
   google_mobile_ads: ^5.1.0
   provider: ^6.1.2
+  webview_flutter_plus: ^0.4.5
+
+  
  
   
  

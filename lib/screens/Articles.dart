@@ -2,18 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ioe/screens/otherpageappbar.dart';
 
 class Articles extends StatelessWidget {
-  const Articles({Key? key}) : super(key: key);
+  const Articles({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: OtherPageAppBar(
-        heading: 'Articles',
-        rightIcon: Icons.home,
-        onRightIconTap: () {
-          Navigator.pop(context);
-        },
-      ),
-    );
+        appBar: OtherPageAppBar(heading: "Articles", rightIcon: Icons.home));
   }
 }
