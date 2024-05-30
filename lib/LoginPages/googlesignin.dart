@@ -29,7 +29,6 @@ class AuthService {
 
             await FirebaseAuth.instance.signInWithCredential(credential);
 
-            // Dismiss the loading indicator if it's shown
             _dismissLoadingIndicator(context);
           } else {
             _handleSignInError(

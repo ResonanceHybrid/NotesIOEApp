@@ -1,6 +1,3 @@
-// Your updated LoginPage.dart file
-// I've enhanced error handling for Firebase authentication exceptions
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,33 +19,45 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  bool isLoading = false;
+
+  void setLoading(bool loading) {
+    setState(() {
+      isLoading = loading;
+    });
+  }
 
   void signUserIn() async {
     if (FirebaseAuth.instance.currentUser != null) {
       return;
     }
 
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
+    setLoading(true);
 
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
-      Navigator.pop(context);
+      // Navigate to the next screen or perform another action after successful login
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
       showErrorMessage(e.message ?? 'An error occurred');
     } catch (e) {
-      Navigator.pop(context);
       showErrorMessage('An error occurred');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  void signInWithGoogle() async {
+    setLoading(true);
+
+    try {
+      await AuthService().signInWithGoogle(context);
+    } catch (e) {
+      showErrorMessage('An error occurred during Google sign-in');
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -126,6 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                 MyButtons(
                   text: 'Sign In',
                   onTap: signUserIn,
+                  isLoading: isLoading, // Pass loading state to the button
                 ),
                 SizedBox(height: 25),
                 Padding(
@@ -158,7 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 25),
                 GestureDetector(
-                  onTap: () => AuthService().signInWithGoogle(context),
+                  onTap: signInWithGoogle,
                   child: SquareTile(imagePath: 'assets/images/google.jpg'),
                 ),
                 SizedBox(height: 25),
