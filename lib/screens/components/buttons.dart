@@ -4,12 +4,19 @@ import 'package:ioe/constants.dart';
 class MyButtons extends StatelessWidget {
   final Function()? onTap;
   final String text;
-  const MyButtons({super.key, required this.onTap, required this.text});
+  final bool isLoading; // Add isLoading parameter
+
+  const MyButtons({
+    Key? key,
+    required this.onTap,
+    required this.text,
+    required this.isLoading, // Ensure isLoading is required
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: isLoading ? null : onTap, // Disable tap when loading
       child: Container(
         padding: EdgeInsets.all(25),
         margin: EdgeInsets.symmetric(horizontal: 25),
@@ -18,14 +25,23 @@ class MyButtons extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
+          child: isLoading
+              ? SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                    strokeWidth: 2,
+                  ),
+                )
+              : Text(
+                  text,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
         ),
       ),
     );

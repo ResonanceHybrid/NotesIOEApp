@@ -26,11 +26,11 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-    if (message.data['link'] != null) {
-      navigatorKey.currentState?.pushNamed(message.data['link']);
-    }
-  });
+  // FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+  //   if (message.data['link'] != null) {
+  //     navigatorKey.currentState?.pushNamed(message.data['link']);
+  //   }
+  // });
 
   runApp(
     Provider.value(

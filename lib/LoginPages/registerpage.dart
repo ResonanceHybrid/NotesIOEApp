@@ -18,6 +18,13 @@ class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+  bool isLoading = false;
+
+  void setLoading(bool loading) {
+    setState(() {
+      isLoading = loading;
+    });
+  }
 
   void signUserUp() async {
     if (!mounted) {
@@ -28,14 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
 
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
+    setLoading(true);
 
     try {
       if (passwordController.text == confirmPasswordController.text) {
@@ -45,15 +45,14 @@ class _RegisterPageState extends State<RegisterPage> {
         );
         Navigator.pop(context);
       } else {
-        Navigator.pop(context);
         showErrorMessage('Password mismatch. Please try again.');
       }
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
       showErrorMessage(e.message ?? 'An error occurred');
     } catch (e) {
-      Navigator.pop(context);
       showErrorMessage('An error occurred');
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -74,6 +73,18 @@ class _RegisterPageState extends State<RegisterPage> {
         );
       },
     );
+  }
+
+  void signInWithGoogle() async {
+    setLoading(true);
+
+    try {
+      await AuthService().signInWithGoogle(context);
+    } catch (e) {
+      showErrorMessage('An error occurred during Google sign-in');
+    } finally {
+      setLoading(false);
+    }
   }
 
   @override
@@ -120,6 +131,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 MyButtons(
                   text: 'Register Now',
                   onTap: signUserUp,
+                  isLoading: isLoading, // Pass loading state to the button
                 ),
                 SizedBox(height: 25),
                 Padding(
@@ -152,7 +164,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 SizedBox(height: 25),
                 GestureDetector(
-                  onTap: () => AuthService().signInWithGoogle(context),
+                  onTap: signInWithGoogle,
                   child: SquareTile(imagePath: 'assets/images/google.jpg'),
                 ),
                 SizedBox(height: 25),
@@ -177,7 +189,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
