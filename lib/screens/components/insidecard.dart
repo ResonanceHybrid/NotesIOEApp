@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/subjectnavigation.dart';
 
 class InsideCard extends StatelessWidget {

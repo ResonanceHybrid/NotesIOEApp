@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     projectId: 'notesioelogin',
     databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'notesioelogin.appspot.com',
+    iosClientId: '1075312743224-et6j5rkjfticgmokbcr5u4hkm1nj4hel.apps.googleusercontent.com',
     iosBundleId: 'com.example.ioe',
   );
 
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     projectId: 'notesioelogin',
     databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'notesioelogin.appspot.com',
+    iosClientId: '1075312743224-et6j5rkjfticgmokbcr5u4hkm1nj4hel.apps.googleusercontent.com',
     iosBundleId: 'com.example.ioe',
   );
 
@@ -90,4 +92,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'notesioelogin.appspot.com',
     measurementId: 'G-ZLMYK9CRKK',
   );
+
 }

@@ -10,7 +10,7 @@ import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem7.dart';
 import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem8.dart';
 
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BEXNotes extends StatelessWidget {
   @override

@@ -7,7 +7,7 @@ import 'package:ioe/Subject_Pages/Soil%20Mechanics.dart';
 import 'package:ioe/Subject_Pages/Surveying%20II.dart';
 import 'package:ioe/Subject_Pages/Theory%20of%20Structures%20I.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCESem4 extends StatelessWidget {
   @override

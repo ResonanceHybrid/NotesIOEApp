@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/insidecard.dart';
-import 'package:ioe/screens/otherpageappbar.dart'; // Import InsideCard
+import 'package:ioe/screens/components/otherpageappbar.dart'; // Import InsideCard
 
 class BCESyllabus extends StatelessWidget {
   @override

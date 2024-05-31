@@ -1,6 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/UsefulPages/aboutus_page.dart';
+import 'package:ioe/screens/UsefulPages/contactus_page.dart';
+import 'package:ioe/screens/UsefulPages/disclaimer_page.dart';
+import 'package:ioe/screens/UsefulPages/policy_page.dart';
+import 'package:ioe/screens/components/constants.dart';
 
 class SideBarNavigation extends StatelessWidget {
   const SideBarNavigation({super.key});
@@ -36,12 +41,13 @@ class SideBarNavigation extends StatelessWidget {
                       "assets/images/logo.png",
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   Text(
                     'Building Bridges to\nKnowledge and Beyond!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
                       fontSize: 15,
                     ),
                   ),
@@ -53,14 +59,20 @@ class SideBarNavigation extends StatelessWidget {
             leading: Icon(Icons.policy),
             title: Text('Policy'),
             onTap: () {
-              // Navigate to Policy page
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => PolicyPage()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.info),
             title: Text('Disclaimer'),
             onTap: () {
-              // Navigate to Disclaimer page
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => DisclaimerPage()),
+              );
             },
           ),
           ListTile(
@@ -68,20 +80,18 @@ class SideBarNavigation extends StatelessWidget {
               Icons.contact_phone,
             ),
             title: Text('Contact Us'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => ContactUsPage()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.star),
             title: Text('Rate Us'),
             onTap: () {
               // Navigate to Rate Us page
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.update),
-            title: Text('Updates'),
-            onTap: () {
-              // Navigate to Updates page
             },
           ),
           ListTile(
@@ -95,7 +105,10 @@ class SideBarNavigation extends StatelessWidget {
             leading: Icon(Icons.person),
             title: Text('About Us'),
             onTap: () {
-              // Navigate to Updates page
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => AboutUsPage()),
+              );
             },
           ),
           ListTile(

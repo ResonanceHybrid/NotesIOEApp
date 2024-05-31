@@ -9,7 +9,7 @@ import 'package:ioe/Subject_Pages/engineerinmath1.dart';
 import 'package:ioe/Subject_Pages/thermodymanics.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCESem1 extends StatelessWidget {
   @override

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ioe/LoginPages/forgotpasswordpage.dart';
 import 'package:ioe/LoginPages/googlesignin.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/buttons.dart';
 import 'package:ioe/screens/components/squaretile.dart';
 import 'package:ioe/screens/components/textfield.dart';

@@ -6,7 +6,7 @@ import 'package:ioe/Subject_Pages/InstrimentationII.dart';
 import 'package:ioe/Subject_Pages/Object%20Oriented%20Analysis%20and%20Design.dart';
 import 'package:ioe/Subject_Pages/Operating%20System.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCTSem6 extends StatelessWidget {
   @override

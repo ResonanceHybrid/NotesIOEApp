@@ -9,7 +9,7 @@ import 'package:ioe/IOE_Notes_Page/BCE%20Notes/bcesem6.dart';
 import 'package:ioe/IOE_Notes_Page/BCE%20Notes/bcesem7.dart';
 import 'package:ioe/IOE_Notes_Page/BCE%20Notes/bcesem8.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCENotes extends StatelessWidget {
   @override

@@ -7,7 +7,7 @@ import 'package:ioe/Subject_Pages/electricdeviceandcircuit.dart';
 import 'package:ioe/Subject_Pages/electromagnetism.dart';
 import 'package:ioe/Subject_Pages/engineeringmath3.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BEISem3 extends StatelessWidget {
   @override

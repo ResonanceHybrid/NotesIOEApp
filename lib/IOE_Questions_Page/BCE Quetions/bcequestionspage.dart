@@ -9,7 +9,7 @@ import 'package:ioe/IOE_Questions_Page/BCT%20Questions/bctsem1question.dart';
 import 'package:ioe/IOE_Questions_Page/BCT%20Questions/bctsem2question.dart';
 import 'package:ioe/IOE_Questions_Page/BCT%20Questions/bctsem3question.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCEQuestions extends StatelessWidget {
   @override

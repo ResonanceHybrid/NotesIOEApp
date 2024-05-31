@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ioe/IOE_Questions_Page/BCT%20Questions/bctquestionspage.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class IOEQuestions extends StatelessWidget {
   const IOEQuestions({Key? key}) : super(key: key);

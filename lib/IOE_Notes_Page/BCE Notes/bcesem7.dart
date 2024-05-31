@@ -6,7 +6,7 @@ import 'package:ioe/Subject_Pages/Hydropower%20Engineering.dart';
 import 'package:ioe/Subject_Pages/Project%20Engineering.dart';
 import 'package:ioe/Subject_Pages/Transportation%20Engineering%20II.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCESem7 extends StatelessWidget {
   @override
