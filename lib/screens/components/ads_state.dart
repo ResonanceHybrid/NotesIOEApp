@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 class AdState {
   Future<InitializationStatus> initialization;
@@ -43,22 +44,27 @@ class AdState {
 
   InterstitialAd? _interstitialAd;
 
-  void loadInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: interstitialAdUnitId,
-      request: AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (InterstitialAd ad) {
-          print('Interstitial Ad loaded: ${ad.adUnitId}.');
-          _interstitialAd = ad;
-          _interstitialAd!.setImmersiveMode(true);
-        },
-        onAdFailedToLoad: (LoadAdError error) {
-          print('Interstitial Ad failed to load: $error');
-          _interstitialAd = null;
-        },
-      ),
-    );
+  void loadInterstitialAd() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult != ConnectivityResult.none) {
+      InterstitialAd.load(
+        adUnitId: interstitialAdUnitId,
+        request: AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            print('Interstitial Ad loaded: ${ad.adUnitId}.');
+            _interstitialAd = ad;
+            _interstitialAd!.setImmersiveMode(true);
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            print('Interstitial Ad failed to load: $error');
+            _interstitialAd = null;
+          },
+        ),
+      );
+    } else {
+      print("No internet connection. Cannot load Interstitial Ad.");
+    }
   }
 
   void showInterstitialAd() {
@@ -75,35 +81,69 @@ class AdState {
 class BannerAdWidget extends StatefulWidget {
   @override
   _BannerAdWidgetState createState() => _BannerAdWidgetState();
+
+  static Future<bool> isInternetConnected() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    return connectivityResult != ConnectivityResult.none;
+  }
 }
 
 class _BannerAdWidgetState extends State<BannerAdWidget> {
-  late BannerAd banner;
+  BannerAd? banner;
+  bool _isAdLoaded = false;
 
   @override
   void initState() {
     super.initState();
-    final adState = Provider.of<AdState>(context, listen: false);
-    banner = BannerAd(
-      adUnitId: adState.bannerAdUnitId,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(),
-    )..load();
+    checkInternetAndLoadAd();
+  }
+
+  void checkInternetAndLoadAd() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult != ConnectivityResult.none) {
+      final adState = Provider.of<AdState>(context, listen: false);
+      banner = BannerAd(
+        adUnitId: adState.bannerAdUnitId,
+        size: AdSize.banner,
+        request: AdRequest(),
+        listener: BannerAdListener(
+          onAdLoaded: (Ad ad) {
+            print('Banner Ad loaded: ${ad.adUnitId}.');
+            setState(() {
+              _isAdLoaded = true;
+            });
+          },
+          onAdFailedToLoad: (Ad ad, LoadAdError error) {
+            print('Banner Ad failed to load: ${ad.adUnitId}, Error: $error');
+            setState(() {
+              _isAdLoaded = false;
+            });
+            ad.dispose();
+          },
+        ),
+      )..load();
+    } else {
+      print("No internet connection. Cannot load Banner Ad.");
+      setState(() {
+        _isAdLoaded = false;
+      });
+    }
   }
 
   @override
   void dispose() {
-    banner.dispose();
+    banner?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity, // Full width
-      height: 50,
-      child: AdWidget(ad: banner),
-    );
+    return _isAdLoaded
+        ? Container(
+            width: double.infinity, // Full width
+            height: 50,
+            child: AdWidget(ad: banner!),
+          )
+        : SizedBox.shrink(); // Return a widget that takes no space
   }
 }
