@@ -1,7 +1,9 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
 import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class Articles extends StatefulWidget {
@@ -14,11 +16,26 @@ class Articles extends StatefulWidget {
 class _ArticlesState extends State<Articles> {
   List<Article> articles = [];
   bool _isLoading = false;
+  bool _isConnected = true; // Track internet connectivity
 
   @override
   void initState() {
     super.initState();
-    _fetchArticles();
+    _checkInternet(); // Check internet connectivity on initialization
+  }
+
+  Future<void> _checkInternet() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      setState(() {
+        _isConnected = false;
+      });
+    } else {
+      setState(() {
+        _isConnected = true;
+      });
+      _fetchArticles(); // Fetch articles if internet is available
+    }
   }
 
   Future<void> _fetchArticles() async {
@@ -55,81 +72,85 @@ class _ArticlesState extends State<Articles> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: OtherPageAppBar(heading: 'Articles', rightIcon: Icons.home),
-      body: _isLoading
-          ? _buildLoadingSkeleton()
-          : RefreshIndicator(
-              color: Colors.blue,
-              onRefresh: _fetchArticles,
-              child: ListView.builder(
-                itemCount: articles.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      elevation: 0.5,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          _launchURL(context, articles[index].url);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(10.0),
-                                child: Image.asset(
-                                  'assets/icon/fab.png',
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              SizedBox(width: 16),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      articles[index].title,
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black87,
-                                      ),
+      appBar: OtherPageAppBar(heading: "Articles", rightIcon: Icons.newspaper),
+      body: _isConnected
+          ? _isLoading
+              ? _buildLoadingSkeleton()
+              : RefreshIndicator(
+                  color: Colors.blue,
+                  onRefresh: _fetchArticles,
+                  child: ListView.builder(
+                    itemCount: articles.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Card(
+                          elevation: 0.5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              _launchURL(context, articles[index].url);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    child: Image.asset(
+                                      'assets/icon/fab.png',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.cover,
                                     ),
-                                    //SSizedBox(height: 12),
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: TextButton(
-                                        onPressed: () {
-                                          _launchURL(
-                                              context, articles[index].url);
-                                        },
-                                        child: Text(
-                                          'Read Article',
+                                  ),
+                                  SizedBox(width: 16),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          articles[index].title,
                                           style: TextStyle(
-                                            color: Colors.blue,
-                                            fontSize: 16,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black87,
                                           ),
                                         ),
-                                      ),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: TextButton(
+                                            onPressed: () {
+                                              _launchURL(
+                                                  context, articles[index].url);
+                                            },
+                                            child: Text(
+                                              'Read Article',
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                                fontSize: 16,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  );
-                },
-              ),
+                      );
+                    },
+                  ),
+                )
+          : Center(
+              child: Text('Please connect to the internet to view articles'),
             ),
     );
   }
@@ -215,63 +236,6 @@ class _ArticlesState extends State<Articles> {
     } catch (e) {
       debugPrint('Error launching URL: $e');
     }
-  }
-}
-
-class SkeletonLoader extends StatefulWidget {
-  final double height;
-  final double width;
-  final BorderRadius borderRadius;
-
-  SkeletonLoader({
-    required this.height,
-    required this.width,
-    this.borderRadius = BorderRadius.zero,
-  });
-
-  @override
-  _SkeletonLoaderState createState() => _SkeletonLoaderState();
-}
-
-class _SkeletonLoaderState extends State<SkeletonLoader>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<Color?> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    )..repeat(reverse: true);
-    _animation = ColorTween(
-      begin: Colors.grey[300],
-      end: Colors.grey[100],
-    ).animate(_controller);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        return Container(
-          width: widget.width,
-          height: widget.height,
-          decoration: BoxDecoration(
-            borderRadius: widget.borderRadius,
-            color: _animation.value,
-          ),
-        );
-      },
-    );
   }
 }
 
