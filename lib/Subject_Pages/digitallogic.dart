@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class DigitalLogic extends StatelessWidget {
   final int initialTabIndex;
@@ -64,11 +66,31 @@ class DigitalLogic extends StatelessWidget {
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        InsideButtons(
+          text: 'Premium Note',
+          fileSize: '26',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Premium-Note-DL.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Morris Mano Book',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Morris-Mano-DL.pdf');
+          },
+        ),
 
         // Add more InsideButtons as needed
       ],

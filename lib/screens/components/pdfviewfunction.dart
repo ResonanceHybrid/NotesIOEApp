@@ -10,55 +10,14 @@ import 'package:path_provider/path_provider.dart';
 
 class PDFDisplay {
   static Future<File> loadFile(String url) async {
-    if (url.contains('drive.google.com')) {
-      final directLink = await _getDirectDownloadLink(url);
-      if (directLink != null) {
-        return _fetchAndStoreFile(directLink);
-      } else {
-        throw Exception(
-            'Failed to fetch direct download link from Google Drive.');
-      }
-    } else {
-      final response = await http.get(Uri.parse(url));
-      final bytes = response.bodyBytes;
-      return _storeFile(url, bytes);
-    }
-  }
-
-  static Future<String?> _getDirectDownloadLink(String url) async {
-    if (url.contains('/file/d/')) {
-      final fileId = url.split('/file/d/')[1].split('/')[0];
-      final directLink =
-          'https://drive.google.com/uc?export=download&id=$fileId';
-      return directLink;
-    } else {
-      return null;
-    }
-  }
-
-  static Future<File> _fetchAndStoreFile(String url) async {
     final response = await http.get(Uri.parse(url));
     final bytes = response.bodyBytes;
-
-    // Extract filename from the response headers
-    final contentDisposition = response.headers['content-disposition'];
-    String filename = basename(url);
-    if (contentDisposition != null && contentDisposition.isNotEmpty) {
-      final startIndex = contentDisposition.indexOf('filename=');
-      if (startIndex != -1) {
-        filename = contentDisposition.substring(startIndex + 9);
-        filename = filename.replaceAll('"', ''); // Remove quotes
-      }
-    }
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$filename');
-    await file.writeAsBytes(bytes, flush: true);
-    return file;
+    return _storeFileTemporarily(url, bytes);
   }
 
-  static Future<File> _storeFile(String url, List<int> bytes) async {
+  static Future<File> _storeFileTemporarily(String url, List<int> bytes) async {
     final filename = basename(url);
-    final dir = await getApplicationDocumentsDirectory();
+    final dir = await getTemporaryDirectory();
     final file = File('${dir.path}/$filename');
     await file.writeAsBytes(bytes, flush: true);
     return file;
@@ -140,6 +99,10 @@ class _PDFViewPageState extends State<PDFViewPage> {
   void dispose() {
     _pageController.dispose();
     _focusNode.dispose();
+    // Delete the temporary file if not explicitly downloaded
+    if (widget.showDownloadButton) {
+      widget.file.delete();
+    }
     super.dispose();
   }
 
