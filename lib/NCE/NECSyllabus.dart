@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class NECSyllabus extends StatelessWidget {
   const NECSyllabus({Key? key}) : super(key: key);

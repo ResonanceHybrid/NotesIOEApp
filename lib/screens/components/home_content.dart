@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/main.dart';
-import 'package:ioe/screens/components/product_model.dart';
-import 'package:ioe/screens/home_screen.dart';
+import 'package:ioe/screens/components/home_pagegrid.dart';
+import 'package:ioe/screens/components/home_screen.dart';
 
 class HomeContent extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser!;

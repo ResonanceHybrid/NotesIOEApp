@@ -7,7 +7,7 @@ import 'package:ioe/IOE_Syllabys_Pages/beisyllabus.dart';
 import 'package:ioe/IOE_Syllabys_Pages/bmesyllabys.dart';
 import 'package:ioe/IOE_Syllabys_Pages/geomatics.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class IOESyllabus extends StatelessWidget {
   const IOESyllabus({Key? key}) : super(key: key);

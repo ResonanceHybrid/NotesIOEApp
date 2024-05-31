@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/subjectnavigation.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class SearchLogic extends StatefulWidget {
   const SearchLogic({Key? key}) : super(key: key);

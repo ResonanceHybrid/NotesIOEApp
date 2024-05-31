@@ -11,9 +11,9 @@ import 'package:ioe/FirebaseAPI/firebaseapi.dart';
 import 'package:ioe/IOE_Questions_Page/ioe_questions.dart';
 import 'package:ioe/IOE_Syllabys_Pages/ioesyllabus.dart';
 import 'package:ioe/IOE_Notes_Page/ioenotes.dart';
-import 'package:ioe/constants.dart';
-import 'package:ioe/screens/Articles.dart';
-import 'package:ioe/screens/News_Results.dart';
+import 'package:ioe/screens/components/constants.dart';
+import 'package:ioe/screens/UsefulPages/Articles.dart';
+import 'package:ioe/screens/UsefulPages/News_Results.dart';
 import 'package:provider/provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();

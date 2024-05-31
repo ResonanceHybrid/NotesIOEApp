@@ -6,7 +6,7 @@ import 'package:ioe/Subject_Pages/InstrimentationII.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20II.dart';
 import 'package:ioe/Subject_Pages/Probability%20And%20Statistics.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BELSem5 extends StatelessWidget {
   @override

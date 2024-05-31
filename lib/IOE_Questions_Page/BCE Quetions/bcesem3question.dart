@@ -8,7 +8,7 @@ import 'package:ioe/Subject_Pages/Strength%20of%20Materials.dart';
 import 'package:ioe/Subject_Pages/Surveying%20I.dart';
 import 'package:ioe/Subject_Pages/engineeringmath3.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCEQuestionsSem3 extends StatelessWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 

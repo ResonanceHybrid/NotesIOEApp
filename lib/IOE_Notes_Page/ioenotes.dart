@@ -4,7 +4,7 @@ import 'package:ioe/IOE_Notes_Page/BCE%20Notes/bcenotespage.dart';
 import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctnotespage.dart';
 
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class IOENotes extends StatelessWidget {
   const IOENotes({Key? key}) : super(key: key);

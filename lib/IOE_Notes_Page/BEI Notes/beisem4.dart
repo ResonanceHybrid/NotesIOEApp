@@ -6,7 +6,7 @@ import 'package:ioe/Subject_Pages/datastructureandalgorithm.dart';
 import 'package:ioe/Subject_Pages/discretestructure.dart';
 import 'package:ioe/Subject_Pages/numericalmethod.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BEISem4 extends StatelessWidget {
   @override

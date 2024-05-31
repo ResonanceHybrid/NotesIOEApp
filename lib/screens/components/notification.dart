@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:ioe/screens/home_screen.dart';
+import 'package:ioe/screens/components/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 
 class NotificationPage extends StatefulWidget {
   @override

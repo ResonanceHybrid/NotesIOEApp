@@ -12,7 +12,7 @@ import 'package:ioe/Subject_Pages/Orginization%20and%20Management.dart';
 import 'package:ioe/Subject_Pages/Project%20Management.dart';
 
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCTSem7 extends StatelessWidget {
   @override

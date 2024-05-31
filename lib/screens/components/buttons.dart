@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ioe/constants.dart';
+import 'package:ioe/screens/components/constants.dart';
 
 class MyButtons extends StatelessWidget {
   final Function()? onTap;

@@ -5,7 +5,7 @@ import 'package:ioe/Subject_Pages/Construction%20Management.dart';
 import 'package:ioe/Subject_Pages/Engineering%20Professional%20Practice.dart';
 import 'package:ioe/Subject_Pages/Technology%20Environment%20and%20Society.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BCEQuestionsSem8 extends StatelessWidget {
   @override

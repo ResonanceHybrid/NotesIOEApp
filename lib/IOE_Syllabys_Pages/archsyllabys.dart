@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/insidecard.dart';
-import 'package:ioe/screens/otherpageappbar.dart';
+import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class BArchSyllabus extends StatelessWidget {
   @override
