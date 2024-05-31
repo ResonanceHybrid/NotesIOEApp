@@ -65,10 +65,77 @@ class Engineeringchemistry extends StatelessWidget {
 
   Widget _buildNotesTab(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        InsideButtons(
+          text: 'Buffer Solution',
+          fileSize: '2',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Buffer-Solution.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Catalyst',
+          fileSize: '3',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/catalyst.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Coordinate Compounds',
+          fileSize: '7',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Coordination-Compound.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Electrochemistry',
+          fileSize: '4',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Electrochemistry1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Reaction Mechanism',
+          fileSize: '3',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Reaction-Mechanism-in-organic-reaction.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Transistion Elements',
+          fileSize: '4',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/transition-elements.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'All Chapters Note',
+          fileSize: '24',
+          icon: Icons.question_answer_outlined,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/05/Engineering-Chemistry-1.pdf');
+          },
+        ),
 
         // Add more InsideButtons as needed
       ],
