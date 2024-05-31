@@ -1,9 +1,8 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
 
 class Articles extends StatefulWidget {
@@ -16,32 +15,27 @@ class Articles extends StatefulWidget {
 class _ArticlesState extends State<Articles> {
   List<Article> articles = [];
   bool _isLoading = false;
-  bool _isConnected = true; // Track internet connectivity
+  bool _isConnected = true;
 
   @override
   void initState() {
     super.initState();
-    _checkInternet(); // Check internet connectivity on initialization
-  }
-
-  Future<void> _checkInternet() async {
-    var connectivityResult = await Connectivity().checkConnectivity();
-    if (connectivityResult == ConnectivityResult.none) {
-      setState(() {
-        _isConnected = false;
-      });
-    } else {
-      setState(() {
-        _isConnected = true;
-      });
-      _fetchArticles(); // Fetch articles if internet is available
-    }
+    _fetchArticles();
   }
 
   Future<void> _fetchArticles() async {
     setState(() {
       _isLoading = true;
     });
+
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      setState(() {
+        _isConnected = false;
+        _isLoading = false;
+      });
+      return;
+    }
 
     try {
       final response =
@@ -56,12 +50,16 @@ class _ArticlesState extends State<Articles> {
                     url: article['link'],
                   ))
               .toList();
+          _isConnected = true;
         });
       } else {
         throw Exception('Failed to load articles');
       }
     } catch (e) {
       debugPrint('Error fetching articles: $e');
+      setState(() {
+        _isConnected = false;
+      });
     } finally {
       setState(() {
         _isLoading = false;
@@ -72,10 +70,20 @@ class _ArticlesState extends State<Articles> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: OtherPageAppBar(heading: "Articles", rightIcon: Icons.newspaper),
-      body: _isConnected
-          ? _isLoading
-              ? _buildLoadingSkeleton()
+      appBar: OtherPageAppBar(heading: 'Articles', rightIcon: Icons.newspaper),
+      body: _isLoading
+          ? _buildLoadingSkeleton()
+          : !_isConnected
+              ? Center(
+                  child: Text(
+                    'Please connect to the\ninternet to view articles.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic),
+                  ),
+                )
               : RefreshIndicator(
                   color: Colors.blue,
                   onRefresh: _fetchArticles,
@@ -148,26 +156,23 @@ class _ArticlesState extends State<Articles> {
                       );
                     },
                   ),
-                )
-          : Center(
-              child: Text('Please connect to the internet to view articles'),
-            ),
+                ),
     );
   }
 
   Widget _buildLoadingSkeleton() {
     return ListView.builder(
-      itemCount: 6, // Display 5 skeleton loading items
+      itemCount: 6, // Display 6 skeleton loading items
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
           child: Card(
-            elevation: 0, // Remove elevation
+            elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: Container(
-              padding: EdgeInsets.all(12.0), // Decrease padding
+              padding: EdgeInsets.all(12.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -176,10 +181,10 @@ class _ArticlesState extends State<Articles> {
                     height: 80,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),
-                      color: Colors.grey[300], // Use light grey color
+                      color: Colors.grey[300],
                     ),
                   ),
-                  SizedBox(width: 12), // Add spacing between icon and text
+                  SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,7 +194,7 @@ class _ArticlesState extends State<Articles> {
                           height: 16,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.0),
-                            color: Colors.grey[300], // Use light grey color
+                            color: Colors.grey[300],
                           ),
                         ),
                         SizedBox(height: 8),
@@ -198,7 +203,7 @@ class _ArticlesState extends State<Articles> {
                           height: 12,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.0),
-                            color: Colors.grey[300], // Use light grey color
+                            color: Colors.grey[300],
                           ),
                         ),
                         SizedBox(height: 8),
@@ -207,7 +212,7 @@ class _ArticlesState extends State<Articles> {
                           height: 12,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.0),
-                            color: Colors.grey[300], // Use light grey color
+                            color: Colors.grey[300],
                           ),
                         ),
                       ],
