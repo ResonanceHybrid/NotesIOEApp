@@ -75,7 +75,7 @@ class DigitalLogic extends StatelessWidget {
           fileSize: '26',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/05/Premium-Note-DL.pdf');
           },
@@ -86,7 +86,7 @@ class DigitalLogic extends StatelessWidget {
           fileSize: '3',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/05/Morris-Mano-DL.pdf');
           },
