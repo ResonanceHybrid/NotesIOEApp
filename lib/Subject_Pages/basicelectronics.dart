@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class BasicElectronics extends StatelessWidget {
   final int initialTabIndex;
@@ -59,16 +61,50 @@ class BasicElectronics extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        InsideButtons(
+          text: 'Digital Electronics',
+          fileSize: '11',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Digital-Electronics-Notes2.pdf');
+          },
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        InsideButtons(
+          text: 'OPAMP',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/OPAMP-Notes.pdf');
+          },
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Text(
+          "Visit the Website notesioe.com\nfor Additional Resources",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontStyle: FontStyle.italic),
+        )
 
         // Add more InsideButtons as needed
       ],

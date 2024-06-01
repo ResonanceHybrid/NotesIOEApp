@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
@@ -59,16 +60,23 @@ class ElectricCircuitTheory extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        Text(
+          "Will Be Availabe Shortly or Visit the Website\nnotesioe.com for Additional Resources",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontStyle: FontStyle.italic),
+        )
 
         // Add more InsideButtons as needed
       ],
@@ -390,10 +398,11 @@ class ElectricCircuitTheory extends StatelessWidget {
             SizedBox(height: 20),
             InsideButtons(
               text: 'Old Questions',
+              fileSize: "3",
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+                    'https://notesioe.com/wp-content/uploads/2024/06/ECT_Questions.pdf');
               },
             ),
           ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:ioe/Subject_Pages/basicelectronics.dart';
 import 'package:ioe/Subject_Pages/engineeringchemistry.dart';
+import 'package:ioe/Subject_Pages/engineeringdrawing2.dart';
 import 'package:ioe/Subject_Pages/engineeringmath2.dart';
 import 'package:ioe/Subject_Pages/thermodymanics.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
@@ -71,7 +72,7 @@ class BELSem2 extends StatelessWidget {
                   context,
                   CupertinoPageRoute(
                       builder: (context) =>
-                          AppliedMechanics(initialTabIndex: 0)),
+                          EngineerinGDrawingII(initialTabIndex: 0)),
                 );
               },
             ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class Edc extends StatelessWidget {
   final int initialTabIndex;
@@ -59,17 +61,57 @@ class Edc extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
-
+        InsideButtons(
+          text: 'BJT',
+          fileSize: '6',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/BJT.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'FET',
+          fileSize: '7',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/EDC-chap-3.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Power Amplifier',
+          fileSize: '1',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Ch-4.Output-Stages-and-Power-Amplifiers.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Oscillator',
+          fileSize: '1',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Ch-5.-Signal-Generator-and-Waveform-Shaping-Circuits.pdf');
+          },
+        ),
         // Add more InsideButtons as needed
       ],
     );
@@ -329,10 +371,11 @@ class Edc extends StatelessWidget {
             SizedBox(height: 20),
             InsideButtons(
               text: 'Old Questions',
+              fileSize: "4",
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+                    'https://notesioe.com/wp-content/uploads/2024/06/EDC_Questions.pdf');
               },
             ),
           ],
