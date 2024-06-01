@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ioe/Subject_Pages/basicelectrical.dart';
 import 'package:ioe/Subject_Pages/basicelectronics.dart';
+import 'package:ioe/Subject_Pages/engineeringdrawing2.dart';
 import 'package:ioe/Subject_Pages/engineeringmath2.dart';
 import 'package:ioe/Subject_Pages/engineeringphysics.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
@@ -64,7 +65,8 @@ class BCESem2 extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  CupertinoPageRoute(builder: (context) => AppliedMechanics()),
+                  CupertinoPageRoute(
+                      builder: (context) => EngineerinGDrawingII()),
                 );
               },
             ),
