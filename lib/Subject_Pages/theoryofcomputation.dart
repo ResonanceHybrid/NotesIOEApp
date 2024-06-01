@@ -158,8 +158,6 @@ class Toc extends StatelessWidget {
                 'https://notesioe.com/wp-content/uploads/2024/06/TURING-MACHINE.pdf');
           },
         ),
-
-        // Add more InsideButtons as needed
       ],
     );
   }
