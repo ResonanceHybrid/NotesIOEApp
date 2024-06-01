@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class Toc extends StatelessWidget {
   final int initialTabIndex;
@@ -59,16 +61,103 @@ class Toc extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        InsideButtons(
+          text: 'Chapter 1 - Reqular Expression',
+          fileSize: '4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/TOC-Chapter-1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 2 - Automata Theory',
+          fileSize: '11',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/toc-chapter-2.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 3 - CFG',
+          fileSize: '4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/TOC-Chap-3.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 4,5,6 - Turing Mahines..',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/TOC-Chap-4-5-6.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Reqular Expression Examples',
+          fileSize: '7',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Regular-Expression-Pumping-lemma-Closure-Properties.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'NFA DFA Examples',
+          fileSize: '6',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/DFA-NFA-Example.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'CFG CNF Examples',
+          fileSize: '5',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/CFG-and-CNF.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Turing Machines Examples',
+          fileSize: '4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd();
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/TURING-MACHINE.pdf');
+          },
+        ),
 
         // Add more InsideButtons as needed
       ],
