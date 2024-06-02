@@ -469,6 +469,18 @@ class AppliedMechanics extends StatelessWidget {
                     'https://notesioe.com/wp-content/uploads/2024/05/Applied-Mechanics.pdf');
               },
             ),
+            SizedBox(
+              height: 10,
+            ),
+            InsideButtons(
+              text: 'Old Questions - 2079',
+              fileSize: '3',
+              icon: Icons.question_answer_outlined,
+              onTap: () {
+                openPDF(context,
+                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+              },
+            ),
           ],
         ),
       ),

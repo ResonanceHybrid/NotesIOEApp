@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:ioe/Subject_Pages/Electric%20Machines%20II.dart';
 import 'package:ioe/Subject_Pages/InstrumentationI.dart';
 import 'package:ioe/Subject_Pages/appliedmath.dart';
 import 'package:ioe/Subject_Pages/datastructureandalgorithm.dart';
 import 'package:ioe/Subject_Pages/discretestructure.dart';
-import 'package:ioe/Subject_Pages/electricmachine.dart';
+
 import 'package:ioe/Subject_Pages/microprocessor.dart';
 import 'package:ioe/Subject_Pages/numericalmethod.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
@@ -32,7 +33,8 @@ class BEXSem5 extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  CupertinoPageRoute(builder: (context) => ElectricalMachine()),
+                  CupertinoPageRoute(
+                      builder: (context) => ElectricMachinesII()),
                 );
               },
             ),

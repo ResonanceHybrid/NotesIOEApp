@@ -70,6 +70,7 @@ class ComputerOrginzationAndArchitecture extends StatelessWidget {
         SizedBox(height: 20),
         InsideButtons(
             text: 'Compiled Note',
+            fileSize: "7.77",
             icon: Icons.arrow_forward,
             onTap: () {
               openPDF(context,
@@ -78,6 +79,7 @@ class ComputerOrginzationAndArchitecture extends StatelessWidget {
         SizedBox(height: 10),
         InsideButtons(
             text: 'Chapter 2 - CPU',
+            fileSize: "1.87",
             icon: Icons.arrow_forward,
             onTap: () {
               openPDF(context,
@@ -86,6 +88,7 @@ class ComputerOrginzationAndArchitecture extends StatelessWidget {
         SizedBox(height: 10),
         InsideButtons(
             text: 'Chapter 4 - Pipeline and Vector',
+            fileSize: "1.65",
             icon: Icons.arrow_forward,
             onTap: () {
               openPDF(context,
@@ -94,12 +97,21 @@ class ComputerOrginzationAndArchitecture extends StatelessWidget {
         SizedBox(height: 10),
         InsideButtons(
             text: 'Chapter 5 - Computer Arhiteture',
+            fileSize: "1.38",
             icon: Icons.arrow_forward,
             onTap: () {
               openPDF(context,
                   'https://notesioe.com/wp-content/uploads/2024/05/Chapter-5-Computer-Arithmatic.pdf');
-            })
-
+            }),
+        SizedBox(height: 30),
+        Text(
+          "More Resources Will Be Availabe Shortly\nKeep Using The App :)",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
+        )
         // Add more InsideButtons as needed
       ],
     );

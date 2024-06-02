@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:ioe/Subject_Pages/Electrical%20Machines%20I.dart';
 import 'package:ioe/Subject_Pages/InstrumentationI.dart';
 import 'package:ioe/Subject_Pages/appliedmath.dart';
 import 'package:ioe/Subject_Pages/datastructureandalgorithm.dart';
 import 'package:ioe/Subject_Pages/discretestructure.dart';
-import 'package:ioe/Subject_Pages/electricmachine.dart';
 import 'package:ioe/Subject_Pages/microprocessor.dart';
 import 'package:ioe/Subject_Pages/numericalmethod.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
@@ -34,13 +34,13 @@ class BCTSem4 extends StatelessWidget {
                   context,
                   CupertinoPageRoute(
                       builder: (context) =>
-                          ElectricalMachine(initialTabIndex: 0)),
+                          ElectricalMachinesI(initialTabIndex: 0)),
                 );
               },
             ),
             SizedBox(height: 10.0),
             InsideButtons(
-              text: 'Instrentation I',
+              text: 'Instrumentation I',
               icon: Icons.arrow_forward,
               onTap: () {
                 Navigator.push(

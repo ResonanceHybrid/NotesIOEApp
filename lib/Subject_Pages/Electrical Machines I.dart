@@ -67,51 +67,60 @@ class ElectricalMachinesI extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(
-          text: 'Beam And Frame',
-          icon: Icons.arrow_forward,
-          onTap: () {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Kinetics And Kinematics',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Truss',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/Polarization.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Centroid',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/एक-चिहान-उपन्यास-.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Friction',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
-          },
-        ),
+        SizedBox(height: 30),
+        Text(
+          "Will Be Availabe Shortly or Visit the Website\nnotesioe.com for Additional Resources",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontStyle: FontStyle.italic),
+        )
+
+        // InsideButtons(
+        //   text: 'Beam And Frame',
+        //   icon: Icons.arrow_forward,
+        //   onTap: () {
+        //     openPDF(context,
+        //         'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
+        //   },
+        // ),
+        // SizedBox(height: 10),
+        // InsideButtons(
+        //   text: 'Kinetics And Kinematics',
+        //   icon: Icons.arrow_forward,
+        //   onTap: () async {
+        //     openPDF(context,
+        //         'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
+        //   },
+        // ),
+        // SizedBox(height: 10),
+        // InsideButtons(
+        //   text: 'Truss',
+        //   icon: Icons.arrow_forward,
+        //   onTap: () async {
+        //     openPDF(context,
+        //         'https://notesioe.com/wp-content/uploads/2023/11/Polarization.pdf');
+        //   },
+        // ),
+        // SizedBox(height: 10),
+        // InsideButtons(
+        //   text: 'Centroid',
+        //   icon: Icons.arrow_forward,
+        //   onTap: () async {
+        //     openPDF(context,
+        //         'https://notesioe.com/wp-content/uploads/2023/11/एक-चिहान-उपन्यास-.pdf');
+        //   },
+        // ),
+        // SizedBox(height: 10),
+        // InsideButtons(
+        //   text: 'Friction',
+        //   icon: Icons.arrow_forward,
+        //   onTap: () async {
+        //     openPDF(context,
+        //         'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
+        //   },
+        // ),
         // Add more InsideButtons as needed
       ],
     );

@@ -27,7 +27,7 @@ class BCTSem5 extends StatelessWidget {
             SizedBox(height: 10.0),
             InsideButtons(
               text: 'Probability and Statistics',
-              icon: Icons.arrow_forward,
+              icon: Icons.calculate,
               onTap: () {
                 Navigator.push(
                   context,
@@ -40,7 +40,7 @@ class BCTSem5 extends StatelessWidget {
             SizedBox(height: 10.0),
             InsideButtons(
               text: 'Computer Organization Architecture',
-              icon: Icons.arrow_forward,
+              icon: Icons.computer,
               onTap: () {
                 Navigator.push(
                   context,
@@ -53,7 +53,7 @@ class BCTSem5 extends StatelessWidget {
             SizedBox(height: 10.0),
             InsideButtons(
               text: 'Software Engineering',
-              icon: Icons.arrow_forward,
+              icon: Icons.code,
               onTap: () {
                 Navigator.push(
                   context,
@@ -66,7 +66,7 @@ class BCTSem5 extends StatelessWidget {
             SizedBox(height: 10.0),
             InsideButtons(
               text: 'Computer Graphics',
-              icon: Icons.arrow_forward,
+              icon: Icons.line_axis,
               onTap: () {
                 Navigator.push(
                   context,
@@ -79,7 +79,7 @@ class BCTSem5 extends StatelessWidget {
             SizedBox(height: 10.0),
             InsideButtons(
               text: 'Instrumentation II',
-              icon: Icons.arrow_forward,
+              icon: Icons.microwave,
               onTap: () {
                 Navigator.push(
                   context,
@@ -92,7 +92,7 @@ class BCTSem5 extends StatelessWidget {
             SizedBox(height: 10.0),
             InsideButtons(
               text: 'Data Communication',
-              icon: Icons.arrow_forward,
+              icon: Icons.graphic_eq,
               onTap: () {
                 Navigator.push(
                   context,

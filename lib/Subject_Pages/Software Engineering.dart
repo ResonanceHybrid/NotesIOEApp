@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class SoftwareEngineering extends StatelessWidget {
   final int initialTabIndex;
@@ -59,17 +61,116 @@ class SoftwareEngineering extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
-
+        InsideButtons(
+          text: 'Chapter 1 - Software Requirement',
+          //fileSize: '12',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Chapter-1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 2 - System Modeling',
+          //fileSize: '11',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Chapter-2.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 3 - Architectural Design',
+          //fileSize: '13',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-3.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 4 - Real Time Software Design',
+          //fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-4.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 5 - Software Reuse',
+          // fileSize: '24',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-5-1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapte 6 - Component Based SE',
+          //fileSize: '9',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-6.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 7 - Verification and Validation',
+          // fileSize: '7',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-7-1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 8 - Testing and Estimation',
+          //fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-8-1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 9 - Quality Management',
+          //fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-9.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 10 - Configuration Management',
+          //fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-10.pdf');
+          },
+        )
         // Add more InsideButtons as needed
       ],
     );

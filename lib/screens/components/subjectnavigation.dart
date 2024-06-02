@@ -69,7 +69,6 @@ import 'package:ioe/Subject_Pages/digitallogic.dart';
 import 'package:ioe/Subject_Pages/discretestructure.dart';
 import 'package:ioe/Subject_Pages/electriccircuittheory.dart';
 import 'package:ioe/Subject_Pages/electricdeviceandcircuit.dart';
-import 'package:ioe/Subject_Pages/electricmachine.dart';
 import 'package:ioe/Subject_Pages/electromagnetism.dart';
 import 'package:ioe/Subject_Pages/engineeringchemistry.dart';
 import 'package:ioe/Subject_Pages/engineeringdrawing1.dart';
@@ -266,7 +265,7 @@ class SubjectNavigator {
         Navigator.push(
           context,
           CupertinoPageRoute(
-              builder: (context) => ElectricalMachine(initialTabIndex: 1)),
+              builder: (context) => ElectricalMachinesI(initialTabIndex: 1)),
         );
         break;
       case 'Communication English':

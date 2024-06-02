@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class InstrumentationII extends StatelessWidget {
   final int initialTabIndex;
@@ -59,16 +61,35 @@ class InstrumentationII extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
+        InsideButtons(
+          text: 'Old Question Solutions IMP',
+          fileSize: '18',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Easy-And-Important-Notes-CG.pdf');
+          },
+        ),
+        SizedBox(height: 30),
+        Text(
+          "More Resources Will Be Availabe Shortly\nKeep Using The App :)",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
+        )
 
         // Add more InsideButtons as needed
       ],
