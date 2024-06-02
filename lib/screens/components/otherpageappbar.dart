@@ -3,13 +3,13 @@ import 'package:ioe/screens/components/constants.dart';
 
 class OtherPageAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String heading;
-  final IconData rightIcon;
+  final IconData? rightIcon;
   final VoidCallback? onRightIconTap;
 
   const OtherPageAppBar({
     Key? key,
     required this.heading,
-    required this.rightIcon,
+    this.rightIcon,
     this.onRightIconTap,
   }) : super(key: key);
 

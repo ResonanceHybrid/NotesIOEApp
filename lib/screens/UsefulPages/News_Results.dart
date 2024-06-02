@@ -7,8 +7,9 @@ class NewsResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          OtherPageAppBar(heading: "News", rightIcon: Icons.newspaper_rounded),
+      appBar: OtherPageAppBar(
+        heading: "News",
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -121,7 +121,9 @@ class _SearchLogicState extends State<SearchLogic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: OtherPageAppBar(heading: "Search", rightIcon: Icons.home),
+      appBar: OtherPageAppBar(
+        heading: "Search",
+      ),
       body: Column(
         children: [
           Padding(

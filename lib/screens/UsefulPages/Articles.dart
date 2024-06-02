@@ -70,7 +70,7 @@ class _ArticlesState extends State<Articles> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: OtherPageAppBar(heading: 'Articles', rightIcon: Icons.newspaper),
+      appBar: OtherPageAppBar(heading: 'Articles'),
       body: _isLoading
           ? _buildLoadingSkeleton()
           : !_isConnected
