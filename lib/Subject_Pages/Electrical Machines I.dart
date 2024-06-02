@@ -69,13 +69,14 @@ class ElectricalMachinesI extends StatelessWidget {
       children: [
         SizedBox(height: 30),
         Text(
-          "Resources Will Be Availabe Shortly\nKeep Using The App :)",
+          "Will Be Availabe Shortly or Visit the Website\nnotesioe.com for Additional Resources",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 18,
               fontStyle: FontStyle.italic),
         )
+
         // InsideButtons(
         //   text: 'Beam And Frame',
         //   icon: Icons.arrow_forward,
