@@ -94,15 +94,14 @@ class BasicElectronics extends StatelessWidget {
                 'https://notesioe.com/wp-content/uploads/2024/06/OPAMP-Notes.pdf');
           },
         ),
-        SizedBox(
-          height: 30,
-        ),
+
+        SizedBox(height: 30),
         Text(
-          "Visit the Website notesioe.com\nfor Additional Resources",
+          "More Resources Will Be Availabe Shortly\nKeep Using The App :)",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 16,
               fontStyle: FontStyle.italic),
         )
 

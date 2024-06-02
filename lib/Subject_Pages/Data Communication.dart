@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
+import 'package:provider/provider.dart';
 
 class DataCommunication extends StatelessWidget {
   final int initialTabIndex;
@@ -59,17 +61,87 @@ class DataCommunication extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
+        bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
-
+        InsideButtons(
+          text: 'Chapter 1,2,3,6',
+          fileSize: '10',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-1236.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 4 - Transmission Media',
+          fileSize: '10',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Chapter-4.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 5 - Data Encoding',
+          fileSize: '6',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-5.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 5 - Friction',
+          fileSize: '3',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2023/04/friction.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapter 7 - Switching',
+          fileSize: '4',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/chapter-7.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Chapte 8 - Information Theory',
+          fileSize: '6',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://docs.google.com/document/d/1tw-fvHaunX_5j3vyBImspoXJ6MPLqYfp/edit?usp=drive_link&ouid=106142024774073819398&rtpof=true&sd=true');
+          },
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Text(
+          "More Resources Will Be Availabe Shortly\nKeep Using The App",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
+        )
         // Add more InsideButtons as needed
       ],
     );
