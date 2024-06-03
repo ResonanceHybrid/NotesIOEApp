@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ioe/Subject_Pages/Artificial%20Intelligence.dart';
+import 'package:ioe/Subject_Pages/Database%20Management%20System.dart';
 import 'package:ioe/Subject_Pages/EngineeringEconomics.dart';
-import 'package:ioe/Subject_Pages/InstrimentationII.dart';
 import 'package:ioe/Subject_Pages/Object%20Oriented%20Analysis%20and%20Design.dart';
 import 'package:ioe/Subject_Pages/Operating%20System.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
@@ -84,7 +84,7 @@ class BCTSem6 extends StatelessWidget {
                   context,
                   CupertinoPageRoute(
                       builder: (context) =>
-                          InstrumentationII(initialTabIndex: 0)),
+                          DatabaseManagementSystem(initialTabIndex: 0)),
                 );
               },
             ),

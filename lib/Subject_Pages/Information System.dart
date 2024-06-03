@@ -67,9 +67,15 @@ class InformationSystem extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(text: 'Overview', icon: Icons.read_more, onTap: () {})
-
+        SizedBox(height: 30),
+        Text(
+          "Notes Will Be Availabe Shortly\nKeep Using The App :)",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
+        )
         // Add more InsideButtons as needed
       ],
     );
