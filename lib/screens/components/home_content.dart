@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ioe/Subject_Pages/IOE_Entrance/ioe_entrancesyllabys.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/main.dart';
 import 'package:ioe/screens/components/home_pagegrid.dart';
@@ -82,46 +84,55 @@ class HomeContent extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15.0, vertical: 10),
-                        child: const Text(
-                          "IOE Entrance Materials",
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            //color: Colors.white,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) =>
+                                      IoeEntrancesyllabys(initialTabIndex: 0)));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15.0, vertical: 10),
+                          child: const Text(
+                            "IOE Entrance Syllabus",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              //color: Colors.white,
+                            ),
                           ),
+                          decoration: BoxDecoration(
+                              //color: kblue,
+                              border: Border.all(color: kblue),
+                              borderRadius: BorderRadius.circular(10)),
                         ),
-                        decoration: BoxDecoration(
-                            //color: kblue,
-                            border: Border.all(color: kblue),
-                            borderRadius: BorderRadius.circular(10)),
                       ),
                       SizedBox(
                         width: 15,
                       ),
+                      // Container(
+                      //   padding: const EdgeInsets.symmetric(
+                      //       horizontal: 15.0, vertical: 10),
+                      //   child: const Text(
+                      //     "Notes and Useful Resources are Being Added",
+                      //     style: TextStyle(
+                      //       fontSize: 18.0,
+                      //     ),
+                      //   ),
+                      //   decoration: BoxDecoration(
+                      //       //color: kblue,
+                      //       border: Border.all(color: kblue),
+                      //       borderRadius: BorderRadius.circular(10)),
+                      // ),
+                      // SizedBox(
+                      //   width: 15,
+                      // ),
                       Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 15.0, vertical: 10),
                         child: const Text(
-                          "License Preparation Syllabus",
-                          style: TextStyle(
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                            //color: kblue,
-                            border: Border.all(color: kblue),
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15.0, vertical: 10),
-                        child: const Text(
-                          "CEE Materials",
+                          "CEE Entrance Syllabus",
                           style: TextStyle(
                             fontSize: 18.0,
                           ),
