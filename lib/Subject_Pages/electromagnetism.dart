@@ -61,13 +61,13 @@ class Electromagnetics extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
-    final adState = Provider.of<AdState>(context, listen: false);
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
@@ -76,7 +76,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '1',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/Imp-topics-8-9-10.pdf');
           },
@@ -87,7 +87,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '5',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/QB-Numerical-Solns.pdf');
           },
@@ -98,7 +98,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '0.7',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/EM-3.pdf');
           },
@@ -109,7 +109,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '9',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/A.-Chapter-wise-numerical-till-chapter-7.pdf');
           },
@@ -120,7 +120,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '3',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/CH-08.pdf');
           },
@@ -131,7 +131,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '1',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/CH-09.pdf');
           },
@@ -142,7 +142,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '6',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/CH-10.pdf');
           },
@@ -153,7 +153,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '3',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/CH-11.pdf');
           },
@@ -164,7 +164,7 @@ class Electromagnetics extends StatelessWidget {
           fileSize: '1',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/Divergence-Theorem.pdf');
           },

@@ -60,7 +60,7 @@ class Oop extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }

@@ -61,13 +61,13 @@ class DataCommunication extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
-    final adState = Provider.of<AdState>(context, listen: false);
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
@@ -76,7 +76,7 @@ class DataCommunication extends StatelessWidget {
           fileSize: '10',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/chapter-1236.pdf');
           },

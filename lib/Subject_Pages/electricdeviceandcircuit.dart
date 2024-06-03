@@ -61,13 +61,13 @@ class Edc extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
-    final adState = Provider.of<AdState>(context, listen: false);
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
@@ -76,7 +76,7 @@ class Edc extends StatelessWidget {
           fileSize: '6',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/BJT.pdf');
           },
@@ -87,7 +87,7 @@ class Edc extends StatelessWidget {
           fileSize: '7',
           icon: Icons.arrow_forward,
           onTap: () {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/EDC-chap-3.pdf');
           },

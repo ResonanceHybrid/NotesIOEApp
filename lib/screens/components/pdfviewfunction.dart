@@ -94,20 +94,20 @@ class _PDFViewPageState extends State<PDFViewPage> {
   int _currentPage = 1; // Start with page 1
   final _pageController = TextEditingController(text: '1');
   final _focusNode = FocusNode();
-  bool _isInternetConnected = false;
+  // bool _isInternetConnected = false;
 
-  @override
-  void initState() {
-    super.initState();
-    checkInternetConnectivity();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   //checkInternetConnectivity();
+  // }
 
-  void checkInternetConnectivity() async {
-    bool isConnected = await BannerAdWidget.isInternetConnected();
-    setState(() {
-      _isInternetConnected = isConnected;
-    });
-  }
+  // void checkInternetConnectivity() async {
+  //  // bool isConnected = await BannerAdWidget.isInternetConnected();
+  //   setState(() {
+  //     _isInternetConnected = isConnected;
+  //   });
+  // }
 
   @override
   void dispose() {
@@ -169,13 +169,13 @@ class _PDFViewPageState extends State<PDFViewPage> {
             },
           ),
         ],
-        bottom: _isInternetConnected
-            ? PreferredSize(
-                preferredSize:
-                    Size.fromHeight(50.0), // Adjust the height as needed
-                child: BannerAdWidget(), // Your ad widget here
-              )
-            : null,
+        // bottom: _isInternetConnected
+        //     ? PreferredSize(
+        //         preferredSize:
+        //             Size.fromHeight(50.0), // Adjust the height as needed
+        //         child: BannerAdWidget(), // Your ad widget here
+        //       )
+        //     : null,
       ),
       body: Column(
         children: [

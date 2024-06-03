@@ -61,13 +61,13 @@ class Toc extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
-    final adState = Provider.of<AdState>(context, listen: false);
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
@@ -76,7 +76,7 @@ class Toc extends StatelessWidget {
           fileSize: '4',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/TOC-Chapter-1.pdf');
           },
@@ -87,7 +87,7 @@ class Toc extends StatelessWidget {
           fileSize: '11',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/toc-chapter-2.pdf');
           },
@@ -98,7 +98,7 @@ class Toc extends StatelessWidget {
           fileSize: '4',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/TOC-Chap-3.pdf');
           },
@@ -109,7 +109,7 @@ class Toc extends StatelessWidget {
           fileSize: '3',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/TOC-Chap-4-5-6.pdf');
           },
@@ -120,7 +120,7 @@ class Toc extends StatelessWidget {
           fileSize: '7',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/Regular-Expression-Pumping-lemma-Closure-Properties.pdf');
           },
@@ -131,7 +131,7 @@ class Toc extends StatelessWidget {
           fileSize: '6',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/DFA-NFA-Example.pdf');
           },
@@ -142,7 +142,7 @@ class Toc extends StatelessWidget {
           fileSize: '5',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/CFG-and-CNF.pdf');
           },
@@ -153,7 +153,7 @@ class Toc extends StatelessWidget {
           fileSize: '4',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd();
+            //adState.showInterstitialAd();
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/TURING-MACHINE.pdf');
           },

@@ -60,13 +60,13 @@ class IoeEntrancesyllabys extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   // Widget _buildNotesTab(BuildContext context) {
-  //   final adState = Provider.of<AdState>(context, listen: false);
+  //   //final adState = Provider.of<AdState>(context, listen: false);
   //   return ListView(
   //     padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
   //     children: [
@@ -75,7 +75,7 @@ class IoeEntrancesyllabys extends StatelessWidget {
   //         fileSize: '12',
   //         icon: Icons.arrow_forward,
   //         onTap: () async {
-  //           adState.showInterstitialAd(); // Show the interstitial ad
+  //           //adState.showInterstitialAd(); // Show the interstitial ad
   //           openPDF(context,
   //               'https://notesioe.com/wp-content/uploads/2023/04/Applied-1.pdf');
   //         },

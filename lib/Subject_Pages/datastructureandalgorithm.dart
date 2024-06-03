@@ -61,13 +61,13 @@ class DSA extends StatelessWidget {
             _buildOldQuestionsTab(context),
           ],
         ),
-        bottomNavigationBar: BannerAdWidget(),
+        //bottomNavigationBar: BannerAdWidget(),
       ),
     );
   }
 
   Widget _buildNotesTab(BuildContext context) {
-    final adState = Provider.of<AdState>(context, listen: false);
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
@@ -76,7 +76,7 @@ class DSA extends StatelessWidget {
           //fileSize: '11',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/data-structure-Final-PART-I.doc.pdf');
           },
@@ -89,7 +89,7 @@ class DSA extends StatelessWidget {
           //fileSize: '3',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/data-structure-final-PART-II.doc.pdf');
           },
@@ -102,7 +102,7 @@ class DSA extends StatelessWidget {
           //fileSize: '3',
           icon: Icons.arrow_forward,
           onTap: () async {
-            adState.showInterstitialAd(); // Show the interstitial ad
+            //adState.showInterstitialAd(); // Show the interstitial ad
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/dsa.pdf');
           },
