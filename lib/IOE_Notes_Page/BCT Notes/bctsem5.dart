@@ -6,6 +6,7 @@ import 'package:ioe/Subject_Pages/Data%20Communication.dart';
 import 'package:ioe/Subject_Pages/InstrimentationII.dart';
 import 'package:ioe/Subject_Pages/Probability%20And%20Statistics.dart';
 import 'package:ioe/Subject_Pages/Software%20Engineering.dart';
+import 'package:ioe/Subject_Pages/english.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
 
@@ -99,6 +100,19 @@ class BCTSem5 extends StatelessWidget {
                   CupertinoPageRoute(
                       builder: (context) =>
                           DataCommunication(initialTabIndex: 0)),
+                );
+              },
+            ),
+            SizedBox(height: 10.0),
+            InsideButtons(
+              text: 'Communication English',
+              icon: Icons.abc,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                      builder: (context) =>
+                          CommunicationEnglish(initialTabIndex: 0)),
                 );
               },
             ),

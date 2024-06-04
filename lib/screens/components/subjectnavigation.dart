@@ -76,6 +76,7 @@ import 'package:ioe/Subject_Pages/engineeringmath2.dart';
 import 'package:ioe/Subject_Pages/engineeringmath3.dart';
 import 'package:ioe/Subject_Pages/engineeringphysics.dart';
 import 'package:ioe/Subject_Pages/engineerinmath1.dart';
+import 'package:ioe/Subject_Pages/english.dart';
 import 'package:ioe/Subject_Pages/microprocessor.dart';
 import 'package:ioe/Subject_Pages/numericalmethod.dart';
 import 'package:ioe/Subject_Pages/objectorientedprogramming.dart.dart';
@@ -271,7 +272,8 @@ class SubjectNavigator {
       case 'Communication English':
         Navigator.push(
           context,
-          CupertinoPageRoute(builder: (context) => Demo()),
+          CupertinoPageRoute(
+              builder: (context) => CommunicationEnglish(initialTabIndex: 1)),
         );
         break;
       case 'Probability and Statistics':
@@ -711,6 +713,7 @@ class SubjectNavigator {
                   initialTabIndex: 1)),
         );
         break;
+
       // Add cases for other subjects and their corresponding pages
       default:
         // Handle case where page not found
