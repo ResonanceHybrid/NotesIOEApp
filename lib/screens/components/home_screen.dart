@@ -119,7 +119,7 @@ class AppBarTop extends StatelessWidget implements PreferredSizeWidget {
           IconButton(
             onPressed: onDrawerIconPressed, // Use the callback function
             icon: Icon(
-              Icons.dashboard_rounded,
+              Icons.menu_open,
               color: Colors.white,
             ),
           ),

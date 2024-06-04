@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/constants.dart';
+import 'package:ioe/screens/components/customtabs.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
+import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
 
 class AboutUsPage extends StatelessWidget {
   @override
@@ -39,16 +41,20 @@ class AboutUsPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        _buildSocialIcon('assets/icon/fab.png', 'notesioe.com'),
+                        _buildSocialIcon(context, 'assets/icon/fab.png',
+                            'notesioe.com', 'https://notesioe.com'),
+                        SizedBox(width: 20),
+                        _buildSocialIcon(context, 'assets/icon/facebook.png',
+                            'notesioe', 'https://www.facebook.com/notesioe'),
+                        SizedBox(width: 20),
+                        _buildSocialIcon(context, 'assets/icon/instagram.png',
+                            '@notesioe', 'https://www.instagram.com/notesioe'),
                         SizedBox(width: 20),
                         _buildSocialIcon(
-                            'assets/icon/facebook.png', 'notesioe'),
-                        SizedBox(width: 20),
-                        _buildSocialIcon(
-                            'assets/icon/instagram.png', '@notesioe'),
-                        SizedBox(width: 20),
-                        _buildSocialIcon(
-                            'assets/icon/reddit.png', 'u/NotesIOE'),
+                            context,
+                            'assets/icon/reddit.png',
+                            'u/NotesIOE',
+                            'https://www.reddit.com/user/NotesIOE'),
                       ],
                     ),
                   ],
@@ -79,19 +85,29 @@ class AboutUsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialIcon(String iconPath, String label) {
-    return Column(
-      children: [
-        Image.asset(iconPath, width: 30, height: 30),
-        SizedBox(height: 5),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
+  Widget _buildSocialIcon(
+      BuildContext context, String iconPath, String label, String url) {
+    return GestureDetector(
+      onTap: () {
+        _launchURL(context, url);
+      },
+      child: Column(
+        children: [
+          Image.asset(iconPath, width: 30, height: 30),
+          SizedBox(height: 5),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
+  }
+
+  void _launchURL(BuildContext context, String url) {
+    launchURL(context, url);
   }
 }
