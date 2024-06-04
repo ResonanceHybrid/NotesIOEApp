@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/ads_state.dart';
+import 'package:ioe/screens/components/insidebuttons.dart';
+import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
 
 class CeeEntrancesyllabus extends StatelessWidget {
@@ -721,14 +723,25 @@ class CeeEntrancesyllabus extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        Text(
-          "Will Be Availabe Shortly Keep Using The App :)",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-              fontStyle: FontStyle.italic),
-        )
+        InsideButtons(
+          text: 'Model Question 1',
+          fileSize: '0.7',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/CEE-Model-Question-Solution-1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Model Question 2',
+          fileSize: '0.5',
+          icon: Icons.arrow_forward,
+          onTap: () {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/CEE-Model-Question-Solution-2_compressed.pdf');
+          },
+        ),
 
         // Add more InsideButtons as needed
       ],

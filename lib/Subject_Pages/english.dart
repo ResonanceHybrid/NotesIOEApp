@@ -71,85 +71,13 @@ class CommunicationEnglish extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
-        InsideButtons(
-          text: 'Chapter 1 - Introduction',
-          fileSize: '12',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            //adState.showInterstitialAd(); // Show the interstitial ad
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/Applied-1.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapter 3 - Force Acting on Particles and Rigid Body',
-          fileSize: '11',
-          icon: Icons.arrow_forward,
-          onTap: () {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/Applied-3.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapter 4 - Centroid',
-          fileSize: '13',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/centroid1.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapter 5 - Friction',
-          fileSize: '3',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/friction.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapter 6 - Beam And Frame',
-          fileSize: '24',
-          icon: Icons.arrow_forward,
-          onTap: () {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/beam-frame.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapte 7 - Truss',
-          fileSize: '9',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/applied-truss.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapter 9 - Kinematics',
-          fileSize: '7',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/kinematics.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Chapter 10 - Kinetics',
-          fileSize: '3',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/kinetics.pdf');
-          },
+        Text(
+          "More Resources Will Be Availabe Shortly\nKeep Using The App :)",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
         )
         // Add more InsideButtons as needed
       ],
