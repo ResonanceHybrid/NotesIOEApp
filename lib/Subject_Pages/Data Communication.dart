@@ -103,16 +103,6 @@ class DataCommunication extends StatelessWidget {
         ),
         SizedBox(height: 10),
         InsideButtons(
-          text: 'Chapter 5 - Friction',
-          fileSize: '3',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/04/friction.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
           text: 'Chapter 7 - Switching',
           fileSize: '4',
           icon: Icons.arrow_forward,

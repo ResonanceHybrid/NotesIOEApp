@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/customtabs.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
 
 class AboutUsPage extends StatelessWidget {
   @override
