@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.read_more),
-            title: Text('Quizes'),
+            title: Text('Instructions'),
             inactiveColor: Colors.grey[600],
             activeColor: kblue,
           ),
