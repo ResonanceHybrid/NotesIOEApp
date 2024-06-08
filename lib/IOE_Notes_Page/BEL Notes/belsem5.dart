@@ -21,7 +21,7 @@ class BELSem5 extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30.0),
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(height: 10.0),
             InsideButtons(
