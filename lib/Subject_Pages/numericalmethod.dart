@@ -66,7 +66,9 @@ class NumericalMethod extends StatelessWidget {
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
+      scrollDirection: Axis.vertical,
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
         Text(

@@ -28,8 +28,7 @@ class AuthService {
             );
 
             await FirebaseAuth.instance.signInWithCredential(credential);
-
-            _dismissLoadingIndicator(context);
+            // Proceed to the next screen or perform another action after successful login
           } else {
             _handleSignInError(
                 context, 'Google sign-in authentication failed.');
@@ -67,12 +66,6 @@ class AuthService {
     _previousRoute = ModalRoute.of(context)?.settings.name;
   }
 
-  void _dismissLoadingIndicator(BuildContext context) {
-    if (Navigator.canPop(context)) {
-      Navigator.of(context, rootNavigator: true).pop();
-    }
-  }
-
   void _handleSignInError(BuildContext context, String errorMessage) {
     print('Sign-in error: $errorMessage');
 
@@ -91,9 +84,5 @@ class AuthService {
         );
       },
     );
-
-    if (_previousRoute != null && Navigator.canPop(context)) {
-      Navigator.of(context).popAndPushNamed(_previousRoute!);
-    }
   }
 }

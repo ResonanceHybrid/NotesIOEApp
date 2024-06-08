@@ -22,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isLoading = false;
 
   void setLoading(bool loading) {
+    if (!mounted) return;
     setState(() {
       isLoading = loading;
     });
@@ -62,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void showErrorMessage(String message) {
+    if (!mounted) return;
     showDialog(
       context: context,
       builder: (context) {
@@ -78,6 +80,13 @@ class _LoginPageState extends State<LoginPage> {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
   @override

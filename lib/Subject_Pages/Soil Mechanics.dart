@@ -65,7 +65,9 @@ class SoilMechanics extends StatelessWidget {
   }
 
   Widget _buildNotesTab(BuildContext context) {
+    //final adState = Provider.of<AdState>(context, listen: false);
     return ListView(
+      scrollDirection: Axis.vertical,
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       children: [
         SizedBox(height: 20),

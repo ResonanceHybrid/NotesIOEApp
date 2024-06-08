@@ -1,38 +1,61 @@
 {
   "project_info": {
-    "project_number": "1075312743224",
-    "firebase_url": "https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "notesioelogin",
-    "storage_bucket": "notesioelogin.appspot.com"
+    "project_number": "525268102625",
+    "project_id": "newlogin-48398",
+    "storage_bucket": "newlogin-48398.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1075312743224:android:6b756a40c6b3167aaba7cd",
+        "mobilesdk_app_id": "1:525268102625:android:6155c183106520a4baf6a0",
         "android_client_info": {
-          "package_name": "com.example.ioe"
+          "package_name": "com.notes.ioe"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1075312743224-g6cl11g9pi08bi5u9v6fa611u4q1k2ut.apps.googleusercontent.com",
+          "client_id": "525268102625-1f5qf9u9jn3h2si5g9v7trs37pos3ln1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.notes.ioe",
+            "certificate_hash": "79bb8ab60e149c432a1fe246d47c8abccce2f637"
+          }
+        },
+        {
+          "client_id": "525268102625-lhfirebvvm1opdhgslivdg8v0a3iifbq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.notes.ioe",
+            "certificate_hash": "f8c2334fbe92bc4739502df807b8369720f2065c"
+          }
+        },
+        {
+          "client_id": "525268102625-rsa8c67du5d4n783f9h93nta5m8f8m1o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.notes.ioe",
+            "certificate_hash": "b56d4090ecc2e212ca159d40475cf7ad8a1ee6f1"
+          }
+        },
+        {
+          "client_id": "525268102625-t5lsqdb5ln47t0cpfdpoa4u0tg49ia9s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCB2lvB_ETBN2UmMLgBAgVakKWF2zEuQfk"
+          "current_key": "AIzaSyCltzdSc69mDQa_9QUDtGXs1ankEanQ5hQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1075312743224-g6cl11g9pi08bi5u9v6fa611u4q1k2ut.apps.googleusercontent.com",
+              "client_id": "525268102625-t5lsqdb5ln47t0cpfdpoa4u0tg49ia9s.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "1075312743224-et6j5rkjfticgmokbcr5u4hkm1nj4hel.apps.googleusercontent.com",
+              "client_id": "525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.ioe"

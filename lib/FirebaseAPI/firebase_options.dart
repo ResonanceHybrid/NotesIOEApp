@@ -41,56 +41,56 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCS6bM0YGR0YssEPzz9GOvEgqSE87aPg-U',
-    appId: '1:1075312743224:web:7458b4f361a3f8ffaba7cd',
-    messagingSenderId: '1075312743224',
-    projectId: 'notesioelogin',
-    authDomain: 'notesioelogin.firebaseapp.com',
-    databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'notesioelogin.appspot.com',
-    measurementId: 'G-ZWHXV9H47D',
+    apiKey: 'AIzaSyC0pV4tNwyeMB6bgA1txVhNXjcXHgVcdKM',
+    appId: '1:525268102625:web:d4591cee5809fd2dbaf6a0',
+    messagingSenderId: '525268102625',
+    projectId: 'newlogin-48398',
+    authDomain: 'newlogin-48398.firebaseapp.com',
+    storageBucket: 'newlogin-48398.appspot.com',
+    measurementId: 'G-CYC607E32H',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCB2lvB_ETBN2UmMLgBAgVakKWF2zEuQfk',
-    appId: '1:1075312743224:android:6b756a40c6b3167aaba7cd',
-    messagingSenderId: '1075312743224',
-    projectId: 'notesioelogin',
-    databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'notesioelogin.appspot.com',
+    apiKey: 'AIzaSyCltzdSc69mDQa_9QUDtGXs1ankEanQ5hQ',
+    appId: '1:525268102625:android:6155c183106520a4baf6a0',
+    messagingSenderId: '525268102625',
+    projectId: 'newlogin-48398',
+    storageBucket: 'newlogin-48398.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAJiLbWasG2WjHfKttlHdfSb-suy9s2B30',
-    appId: '1:1075312743224:ios:5cddd8e679c7a9c8aba7cd',
-    messagingSenderId: '1075312743224',
-    projectId: 'notesioelogin',
-    databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'notesioelogin.appspot.com',
-    iosClientId: '1075312743224-et6j5rkjfticgmokbcr5u4hkm1nj4hel.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBtwwNwmSs42Y9MQP7BZxJsjuDEZwMCmzc',
+    appId: '1:525268102625:ios:05c9a593037a918dbaf6a0',
+    messagingSenderId: '525268102625',
+    projectId: 'newlogin-48398',
+    storageBucket: 'newlogin-48398.appspot.com',
+    androidClientId:
+        '525268102625-sgbamn6c0ega06e4gvsuld3363590n13.apps.googleusercontent.com',
+    iosClientId:
+        '525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com',
     iosBundleId: 'com.example.ioe',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAJiLbWasG2WjHfKttlHdfSb-suy9s2B30',
-    appId: '1:1075312743224:ios:5cddd8e679c7a9c8aba7cd',
-    messagingSenderId: '1075312743224',
-    projectId: 'notesioelogin',
-    databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'notesioelogin.appspot.com',
-    iosClientId: '1075312743224-et6j5rkjfticgmokbcr5u4hkm1nj4hel.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBtwwNwmSs42Y9MQP7BZxJsjuDEZwMCmzc',
+    appId: '1:525268102625:ios:05c9a593037a918dbaf6a0',
+    messagingSenderId: '525268102625',
+    projectId: 'newlogin-48398',
+    storageBucket: 'newlogin-48398.appspot.com',
+    androidClientId:
+        '525268102625-sgbamn6c0ega06e4gvsuld3363590n13.apps.googleusercontent.com',
+    iosClientId:
+        '525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com',
     iosBundleId: 'com.example.ioe',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCS6bM0YGR0YssEPzz9GOvEgqSE87aPg-U',
-    appId: '1:1075312743224:web:5fbd9d5a8c05c33aaba7cd',
-    messagingSenderId: '1075312743224',
-    projectId: 'notesioelogin',
-    authDomain: 'notesioelogin.firebaseapp.com',
-    databaseURL: 'https://notesioelogin-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'notesioelogin.appspot.com',
-    measurementId: 'G-ZLMYK9CRKK',
+    apiKey: 'AIzaSyC0pV4tNwyeMB6bgA1txVhNXjcXHgVcdKM',
+    appId: '1:525268102625:web:c89f1211fcd11cadbaf6a0',
+    messagingSenderId: '525268102625',
+    projectId: 'newlogin-48398',
+    authDomain: 'newlogin-48398.firebaseapp.com',
+    storageBucket: 'newlogin-48398.appspot.com',
+    measurementId: 'G-G7XTKSZQXV',
   );
-
 }
