@@ -355,7 +355,7 @@ class DiscreteStructure extends StatelessWidget {
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+                    'https://notesioe.com/wp-content/uploads/2023/10/Discrete-Structure.pdf');
               },
             ),
           ],
