@@ -71,7 +71,7 @@ class ComputerOrginzationAndArchitecture extends StatelessWidget {
       children: [
         SizedBox(height: 20),
         InsideButtons(
-            text: 'Compiled Note',
+            text: 'Compiled Note (Hari Aryal)',
             fileSize: "7.77",
             icon: Icons.arrow_forward,
             onTap: () {
