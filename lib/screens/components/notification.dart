@@ -170,7 +170,7 @@ class NotificationTile extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          trailing: Icon(Icons.arrow_forward_ios),
+          //trailing: Icon(Icons.arrow_forward_ios),
           onTap: () {
             if (link != null && link!.isNotEmpty) {
               Navigator.pushNamed(context, link!);
