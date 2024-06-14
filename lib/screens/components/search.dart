@@ -112,7 +112,7 @@ class _SearchLogicState extends State<SearchLogic> {
       } else {
         filteredSubjects = allSubjects
             .where((subject) =>
-                subject.toLowerCase().startsWith(query.toLowerCase()))
+                subject.toLowerCase().contains(query.toLowerCase()))
             .toList();
       }
     });
