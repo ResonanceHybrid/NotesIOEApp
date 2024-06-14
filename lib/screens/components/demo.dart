@@ -23,13 +23,13 @@ class Demo extends StatelessWidget {
               children: [
                 SubSection(
                     text:
-                        'If the desired subject is not found, try to contact us through the contact page or search for the subjects in the search bar.'),
+                        'If the desired subject is not found, try to contact us through the contact page or utilize the search feature by entering keywords related to the subject or notes you are looking for.'),
                 SubSection(
                     text:
                         'All the downloaded files will be stored in the Downloads section, which can be found at the end of the bottom navigation bar.'),
                 SubSection(
                     text:
-                        'The PDFs opened are fetched from the web, so it might take some time to fulfill the requests.'),
+                        'The PDFs opened are fetched from the web, so it might take some time to fulfill the requests depending upon the internet speed and file size.'),
                 SubSection(
                     text:
                         'Please inform us if any bugs or misleading navigation are found through our report issue page.'),
@@ -42,9 +42,6 @@ class Demo extends StatelessWidget {
                 SubSection(
                     text:
                         'Use the bottom navigation bar to easily switch between different sections of the app and sidebar navigation for useful pages.'),
-                SubSection(
-                    text:
-                        'Utilize the search feature by entering keywords related to the subject or notes you are looking for.'),
                 SubSection(
                     text:
                         'Keep your app updated to receive the latest features and improvements.'),
