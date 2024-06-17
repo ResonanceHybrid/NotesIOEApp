@@ -69,51 +69,16 @@ class TheoryofStructuresI extends StatelessWidget {
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       children: [
-        SizedBox(height: 20),
-        InsideButtons(
-          text: 'Beam And Frame',
-          icon: Icons.arrow_forward,
-          onTap: () {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Kinetics And Kinematics',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Truss',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/Polarization.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Centroid',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/एक-चिहान-उपन्यास-.pdf');
-          },
-        ),
-        SizedBox(height: 10),
-        InsideButtons(
-          text: 'Friction',
-          icon: Icons.arrow_forward,
-          onTap: () async {
-            openPDF(context,
-                'https://notesioe.com/wp-content/uploads/2023/11/matrix.pdf');
-          },
-        ),
+        SizedBox(height: 30),
+        Text(
+          "Notes Will Be Availabe Shortly\nKeep Using The App :)",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
+        )
+
         // Add more InsideButtons as needed
       ],
     );

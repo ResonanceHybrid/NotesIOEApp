@@ -73,7 +73,7 @@ class Toc extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
         InsideButtons(
-          text: 'Chapter 1 - Reqular Expression',
+          text: 'Chapter 1 - Regular Expression',
           fileSize: '4',
           icon: Icons.arrow_forward,
           onTap: () async {

@@ -20,6 +20,7 @@ import 'package:ioe/Subject_Pages/Digital%20Signal%20Analysis%20and%20Processing
 import 'package:ioe/Subject_Pages/Distributed%20System.dart';
 import 'package:ioe/Subject_Pages/Electric%20Machines%20II.dart';
 import 'package:ioe/Subject_Pages/Electrical%20Machines%20I.dart';
+import 'package:ioe/Subject_Pages/EngineeringEconomics.dart';
 import 'package:ioe/Subject_Pages/Industrial%20Power%20Distribution%20and%20Illumination.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20I.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20II.dart';
@@ -72,6 +73,7 @@ import 'package:ioe/Subject_Pages/electricdeviceandcircuit.dart';
 import 'package:ioe/Subject_Pages/electromagnetism.dart';
 import 'package:ioe/Subject_Pages/engineeringchemistry.dart';
 import 'package:ioe/Subject_Pages/engineeringdrawing1.dart';
+import 'package:ioe/Subject_Pages/engineeringdrawing2.dart';
 import 'package:ioe/Subject_Pages/engineeringmath2.dart';
 import 'package:ioe/Subject_Pages/engineeringmath3.dart';
 import 'package:ioe/Subject_Pages/engineeringphysics.dart';
@@ -145,7 +147,8 @@ class SubjectNavigator {
       case 'Engineering Drawing II':
         Navigator.push(
           context,
-          CupertinoPageRoute(builder: (context) => Demo()),
+          CupertinoPageRoute(
+              builder: (context) => EngineerinGDrawingII(initialTabIndex: 1)),
         );
         break;
       case 'Basic Electronics Engineering':
@@ -170,10 +173,10 @@ class SubjectNavigator {
         );
         break;
       case 'Workshop Technology':
-        Navigator.push(
-          context,
-          CupertinoPageRoute(builder: (context) => Demo()),
-        );
+        // Navigator.push(
+        //   //context,
+        //   //CupertinoPageRoute(builder: (context) => Demo()),
+        // );
         break;
       case 'Engineering Mathematics III':
         Navigator.push(
@@ -323,7 +326,8 @@ class SubjectNavigator {
       case 'Engineering Economics':
         Navigator.push(
           context,
-          CupertinoPageRoute(builder: (context) => Demo()),
+          CupertinoPageRoute(
+              builder: (context) => EngineeringEconomics(initialTabIndex: 1)),
         );
         break;
       case 'Object Oriented Analysis and Design':
