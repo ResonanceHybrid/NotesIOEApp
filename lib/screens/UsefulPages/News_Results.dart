@@ -16,7 +16,7 @@ class NewsResults extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'No News Yet :)',
+              'No News Yet, Chill :)',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
