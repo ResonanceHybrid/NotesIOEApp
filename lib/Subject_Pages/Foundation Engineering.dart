@@ -465,10 +465,11 @@ class FoundationEngineering extends StatelessWidget {
             SizedBox(height: 20),
             InsideButtons(
               text: 'Old Questions',
+              fileSize: '1',
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+                    'https://notesioe.com/wp-content/uploads/2024/06/FoundationPastQ-1.pdf');
               },
             ),
           ],
