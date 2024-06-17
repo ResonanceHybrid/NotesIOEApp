@@ -85,7 +85,6 @@ import 'package:ioe/Subject_Pages/objectorientedprogramming.dart.dart';
 import 'package:ioe/Subject_Pages/theoryofcomputation.dart';
 import 'package:ioe/Subject_Pages/thermodymanics.dart';
 import 'package:ioe/Subject_Pages/Sanitary%20Engineering.dart';
-import 'package:ioe/screens/components/demo.dart';
 
 class SubjectNavigator {
   static void navigateToSubjectPage(BuildContext context, String subject) {
