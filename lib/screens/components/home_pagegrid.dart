@@ -34,7 +34,7 @@ List<Product> products = [
     title: "IOE Questions",
     image: "assets/images/extra.png",
     color: Color(0xFFffaa5b),
-    courses: 'Uff! Garooo',
+    courses: 'Uff! Garoo',
   ),
   Product(
     id: 4,
