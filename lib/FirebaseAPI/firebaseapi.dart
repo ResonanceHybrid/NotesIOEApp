@@ -27,11 +27,11 @@ class FirebaseAPI {
     );
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      _handleMessage(message);
+      _handleMessage(context, message);
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      _handleMessage(message);
+      _handleMessage(context, message);
     });
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -42,12 +42,23 @@ class FirebaseAPI {
     await _saveNotification(message);
   }
 
-  Future<void> _handleMessage(RemoteMessage message) async {
+  Future<void> _handleMessage(
+      BuildContext context, RemoteMessage message) async {
     await _saveNotification(message);
 
     String? link = message.data['link'];
     if (link != null && !kIsWeb) {
-      navigatorKey.currentState?.pushNamed(link);
+      Navigator.pushNamedAndRemoveUntil(
+        navigatorKey.currentState!.context,
+        link,
+        (route) => false,
+      );
+    } else {
+      Navigator.pushNamedAndRemoveUntil(
+        navigatorKey.currentState!.context,
+        '/notification',
+        (route) => false,
+      );
     }
   }
 

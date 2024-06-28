@@ -94,18 +94,16 @@ class SideBarNavigation extends StatelessWidget {
             title: Text('Contact Us'),
             onTap: () => _launchURL(context, "https://notesioe.com/contact"),
           ),
-          // ListTile(
-          //   leading: Icon(Icons.star),
-          //   title: Text('Rate Us'),
-          //   onTap: () {
-          //     // Navigate to Rate Us page
-          //   },
-          // ),
+          ListTile(
+            leading: Icon(Icons.update),
+            title: Text('Check For Updates'),
+            onTap: () => _launchURL(context,
+                "https://play.google.com/store/apps/details?id=com.notes.ioe"),
+          ),
           ListTile(
               leading: Icon(Icons.report),
               title: Text('Report An Issue'),
               onTap: () => _launchURL(context, "https://notesioe.com/contact")),
-
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('Logout'),

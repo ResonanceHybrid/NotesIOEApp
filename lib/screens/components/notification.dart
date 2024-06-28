@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ioe/screens/components/constants.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -17,10 +18,23 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   void initState() {
     super.initState();
+    _initializeFCM();
     // Start loading after 500 milliseconds
     Timer(Duration(milliseconds: 500), () {
       _loadNotifications();
     });
+  }
+
+  Future<void> _initializeFCM() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+    // Get the FCM token
+    String? token = await messaging.getToken();
+    print("FCM Token: $token");
+
+    // You can also save the token in SharedPreferences if needed
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('fcm_token', token ?? '');
   }
 
   Future<void> _loadNotifications() async {
@@ -79,6 +93,7 @@ class _NotificationPageState extends State<NotificationPage> {
                               notificationData['title'] ?? 'No Title';
                           String notificationBody =
                               notificationData['body'] ?? 'No Body';
+                          String? notificationLink = notificationData['link'];
                           return Dismissible(
                             key: Key(notification),
                             onDismissed: (direction) async {
@@ -102,6 +117,7 @@ class _NotificationPageState extends State<NotificationPage> {
                             child: NotificationTile(
                               title: notificationTitle,
                               body: notificationBody,
+                              link: notificationLink,
                             ),
                           );
                         },
@@ -170,7 +186,6 @@ class NotificationTile extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          //trailing: Icon(Icons.arrow_forward_ios),
           onTap: () {
             if (link != null && link!.isNotEmpty) {
               Navigator.pushNamed(context, link!);
