@@ -122,6 +122,16 @@ class DataCommunication extends StatelessWidget {
                 'https://docs.google.com/document/d/1tw-fvHaunX_5j3vyBImspoXJ6MPLqYfp/edit?usp=drive_link&ouid=106142024774073819398&rtpof=true&sd=true');
           },
         ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Lab 3 - Analog Modulation',
+          fileSize: '0.4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/06/Matlab-Lab-3.docx');
+          },
+        ),
         SizedBox(
           height: 30,
         ),
