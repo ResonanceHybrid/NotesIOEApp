@@ -10,11 +10,11 @@
 
 //   String get bannerAdUnitId => Platform.isAndroid
 //       ? 'ca-app-pub-3940256099942544/9214589741'
-//       : 'ca-app-pub-3940256099942544/6300978111';
+//       : 'ca-app-pub-4177252830441345/3541288907';
 
 //   String get interstitialAdUnitId => Platform.isAndroid
-//       ? 'ca-app-pub-3940256099942544/8691691433'
-//       : 'ca-app-pub-3940256099942544/1033173712';
+//       ? 'ca-app-pub-3940256099942544/1033173712'
+//       : 'ca-app-pub-4177252830441345/6610305373';
 
 //   BannerAdListener get bannerAdListener => _bannerAdListener;
 
@@ -101,7 +101,7 @@
 //   void checkInternetAndLoadAd() async {
 //     var connectivityResult = await (Connectivity().checkConnectivity());
 //     if (connectivityResult != ConnectivityResult.none) {
-//       //final adState = Provider.of<AdState>(context, listen: false);
+//       final adState = Provider.of<AdState>(context, listen: false);
 //       banner = BannerAd(
 //         adUnitId: adState.bannerAdUnitId,
 //         size: AdSize.banner,
