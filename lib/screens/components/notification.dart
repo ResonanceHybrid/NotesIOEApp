@@ -5,6 +5,23 @@ import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
+
+void launchURL(BuildContext context, String url) async {
+  final theme = Theme.of(context);
+  try {
+    await launchUrl(
+      Uri.parse(url),
+      options: LaunchOptions(
+        barColor: theme.colorScheme.surface,
+        onBarColor: theme.colorScheme.onSurface,
+        barFixingEnabled: false,
+      ),
+    );
+  } catch (e) {
+    debugPrint('Error launching URL: $e');
+  }
+}
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -28,11 +45,14 @@ class _NotificationPageState extends State<NotificationPage> {
   Future<void> _initializeFCM() async {
     FirebaseMessaging messaging = FirebaseMessaging.instance;
 
+    // Request permission for iOS devices
+    await messaging.requestPermission();
+
     // Get the FCM token
     String? token = await messaging.getToken();
     print("FCM Token: $token");
 
-    // You can also save the token in SharedPreferences if needed
+    // Save the token in SharedPreferences if needed
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('fcm_token', token ?? '');
   }
@@ -142,9 +162,12 @@ class NotificationTile extends StatelessWidget {
   final String body;
   final String? link;
 
-  const NotificationTile(
-      {Key? key, required this.title, required this.body, this.link})
-      : super(key: key);
+  const NotificationTile({
+    Key? key,
+    required this.title,
+    required this.body,
+    this.link,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +211,9 @@ class NotificationTile extends StatelessWidget {
           ),
           onTap: () {
             if (link != null && link!.isNotEmpty) {
-              Navigator.pushNamed(context, link!);
+              launchURL(context, link!);
+            } else {
+              Navigator.pushNamed(context, '/notification');
             }
           },
         ),

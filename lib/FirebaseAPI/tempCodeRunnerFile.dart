@@ -4,28 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ioe/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
-
-void launchURL(BuildContext context, String url) async {
-  final theme = Theme.of(context);
-  try {
-    await launchUrl(
-      Uri.parse(url),
-      options: LaunchOptions(
-        barColor: theme.colorScheme.surface,
-        onBarColor: theme.colorScheme.onSurface,
-        barFixingEnabled: false,
-      ),
-    );
-  } catch (e) {
-    debugPrint('Error launching URL: $e');
-  }
-}
 
 class FirebaseAPI {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
-  Future<void> initNotification(BuildContext? context) async {
+  Future<void> initNotification(BuildContext context) async {
     NotificationSettings settings =
         await _firebaseMessaging.requestPermission();
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
@@ -52,15 +35,6 @@ class FirebaseAPI {
     });
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-
-    // Handle notification if the app is opened from a terminated state
-    FirebaseMessaging.instance
-        .getInitialMessage()
-        .then((RemoteMessage? message) {
-      if (message != null) {
-        navigatorKey.currentState?.pushNamed('/notification');
-      }
-    });
   }
 
   static Future<void> _firebaseMessagingBackgroundHandler(
@@ -69,9 +43,17 @@ class FirebaseAPI {
   }
 
   Future<void> _handleMessage(
-      BuildContext? context, RemoteMessage message) async {
+      BuildContext context, RemoteMessage message) async {
     await _saveNotification(message);
-    navigatorKey.currentState?.pushNamed('/notification');
+
+    // String? link = message.data['link'];
+    // if (link != null && !kIsWeb) {
+    //   // Navigate to the specified link if it exists
+    //   Navigator.pushNamed(context, link);
+    // } else {
+    //   // If no link is provided, navigate to the default notification page
+    //   Navigator.pushNamed(context, '/notification');
+    // }
   }
 
   static Future<void> _saveNotification(RemoteMessage message) async {
