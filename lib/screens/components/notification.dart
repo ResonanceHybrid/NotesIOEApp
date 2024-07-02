@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:ioe/screens/components/constants.dart';
-import 'package:ioe/screens/components/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
+import 'package:ioe/screens/components/constants.dart';
+import 'package:ioe/screens/components/home_screen.dart';
 
 void launchURL(BuildContext context, String url) async {
   final theme = Theme.of(context);
@@ -86,7 +86,6 @@ class _NotificationPageState extends State<NotificationPage> {
               child: isLoading
                   ? _buildLoadingAnimation()
                   : RefreshIndicator(
-                      color: kblue,
                       onRefresh: _refreshNotifications,
                       child: ListView.builder(
                         itemCount:
@@ -212,8 +211,6 @@ class NotificationTile extends StatelessWidget {
           onTap: () {
             if (link != null && link!.isNotEmpty) {
               launchURL(context, link!);
-            } else {
-              Navigator.pushNamed(context, '/notification');
             }
           },
         ),

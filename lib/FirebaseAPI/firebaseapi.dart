@@ -4,23 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ioe/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
-
-void launchURL(BuildContext context, String url) async {
-  final theme = Theme.of(context);
-  try {
-    await launchUrl(
-      Uri.parse(url),
-      options: LaunchOptions(
-        barColor: theme.colorScheme.surface,
-        onBarColor: theme.colorScheme.onSurface,
-        barFixingEnabled: false,
-      ),
-    );
-  } catch (e) {
-    debugPrint('Error launching URL: $e');
-  }
-}
 
 class FirebaseAPI {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
@@ -58,7 +41,7 @@ class FirebaseAPI {
         .getInitialMessage()
         .then((RemoteMessage? message) {
       if (message != null) {
-        navigatorKey.currentState?.pushNamed('/notification');
+        _handleMessage(context, message);
       }
     });
   }
