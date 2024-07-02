@@ -381,7 +381,7 @@ class OrganizationandManagement extends StatelessWidget {
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/06/Orgianization-and-Management.pdf');
+                    'https://notesioe.com/wp-content/uploads/2024/07/Orginization-and-Management.pdf');
               },
             ),
           ],
