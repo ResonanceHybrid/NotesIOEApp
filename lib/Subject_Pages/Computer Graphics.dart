@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
+import 'package:ioe/screens/components/customtabs.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
@@ -73,7 +74,7 @@ class ComputerGraphics extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
         InsideButtons(
-          text: 'Easy And Important Notes IMP',
+          text: 'Easy And Important Notes',
           fileSize: '18',
           icon: Icons.arrow_forward,
           onTap: () async {
@@ -81,6 +82,34 @@ class ComputerGraphics extends StatelessWidget {
             openPDF(context,
                 'https://notesioe.com/wp-content/uploads/2024/06/Easy-And-Important-Notes-CG.pdf');
           },
+        ),
+        SizedBox(height: 30),
+        Text(
+          "Lab Reports",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              fontStyle: FontStyle.italic),
+        ),
+        SizedBox(height: 30),
+        InsideButtons(
+          text: 'Lab 1-6 Compiled',
+          fileSize: '4',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            //adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/07/CG-Lab-Reports-Compiled.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
+          text: 'Code GitHub',
+          //fileSize: '18',
+          icon: Icons.arrow_forward,
+          onTap: () => _launchURL(
+              context, "https://github.com/ResonanceHybrid/Computer-Graphics"),
         ),
         SizedBox(height: 30),
         Text(
@@ -374,4 +403,8 @@ class ComputerGraphics extends StatelessWidget {
       ),
     );
   }
+}
+
+void _launchURL(BuildContext context, String url) {
+  launchURL(context, url);
 }
