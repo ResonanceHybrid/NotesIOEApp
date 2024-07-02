@@ -334,7 +334,7 @@ class DigitalSignalAnalysis extends StatelessWidget {
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/06/Digital-Signal-Analysis-and-Processing.pdf');
+                    'https://notesioe.com/wp-content/uploads/2024/07/Digital-Signal-Analysis-and-Processing.pdf');
               },
             ),
           ],
