@@ -356,21 +356,13 @@ class ArtificialIntelligence extends StatelessWidget {
             SizedBox(height: 20),
             InsideButtons(
               text: 'Old Questions',
+              fileSize: '0.45',
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2023/04/Artificial-Intelligence.pdf');
+                    'https://notesioe.com/wp-content/uploads/2024/07/Artificial-Intelligence.pdf');
               },
             ),
-            SizedBox(height: 30),
-            Text(
-              "New Questions Will Be Availabe Shortly\nKeep Using The App :)",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic),
-            )
           ],
         ),
       ),
