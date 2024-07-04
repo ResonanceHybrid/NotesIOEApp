@@ -408,12 +408,22 @@ class ComputationalTechniquesinCivilEngineering extends StatelessWidget {
             SizedBox(height: 20),
             InsideButtons(
               text: 'Old Questions',
+              fileSize: '1',
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+                    'https://notesioe.com/wp-content/uploads/2023/04/Computational-Technique-and-Civil-Engineering.pdf');
               },
             ),
+            SizedBox(height: 30),
+            Text(
+              "New Questions Will Be Added Accordingly,\nKeep Checking The App :)",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic),
+            )
           ],
         ),
       ),
