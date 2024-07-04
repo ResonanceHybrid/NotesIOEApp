@@ -73,6 +73,17 @@ class DataCommunication extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
       children: [
         InsideButtons(
+          text: 'Chapter 1 (Recommended)',
+          fileSize: '2',
+          icon: Icons.arrow_forward,
+          onTap: () async {
+            //adState.showInterstitialAd(); // Show the interstitial ad
+            openPDF(context,
+                'https://notesioe.com/wp-content/uploads/2024/07/DC-Chap1.pdf');
+          },
+        ),
+        SizedBox(height: 10),
+        InsideButtons(
           text: 'Chapter 1,2,3,6',
           fileSize: '10',
           icon: Icons.arrow_forward,
