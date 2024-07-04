@@ -15,7 +15,7 @@ class ElectricCircuitAndMachines extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'ELECTRIC CIRCUITS AND MACHINES',
+            'Electric Circuits and Machines',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,

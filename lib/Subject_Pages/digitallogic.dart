@@ -467,6 +467,15 @@ class DigitalLogic extends StatelessWidget {
                     'https://notesioe.com/wp-content/uploads/2024/06/DL_Questions.pdf');
               },
             ),
+            SizedBox(height: 30),
+            Text(
+              "New Questions Will Be Added Accordingly,\nKeep Checking The App :)",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic),
+            )
           ],
         ),
       ),
