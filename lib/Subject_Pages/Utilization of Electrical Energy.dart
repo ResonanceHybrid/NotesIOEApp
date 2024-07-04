@@ -324,10 +324,11 @@ class UtilizationofElectricalEnergy extends StatelessWidget {
             SizedBox(height: 20),
             InsideButtons(
               text: 'Old Questions',
+              fileSize: '3',
               icon: Icons.question_answer_outlined,
               onTap: () {
                 openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
+                    'https://notesioe.com/wp-content/uploads/2023/04/Utilization-of-Electrical-Energy.pdf');
               },
             ),
           ],
