@@ -109,7 +109,7 @@ class SideBarNavigation extends StatelessWidget {
             leading: Icon(Icons.update),
             title: Text('Check For Updates'),
             onTap: () => _launchURL(context,
-                "https://play.google.com/store/apps/details?id=com.notes.ioe"),
+                "https://play.google.com/store/apps/details?id=com.notes.ioe&hl=en"),
           ),
         ],
       ),
