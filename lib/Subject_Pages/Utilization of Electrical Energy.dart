@@ -331,6 +331,15 @@ class UtilizationofElectricalEnergy extends StatelessWidget {
                     'https://notesioe.com/wp-content/uploads/2023/04/Utilization-of-Electrical-Energy.pdf');
               },
             ),
+            SizedBox(height: 30),
+            Text(
+              "New Questions Will Be Added Accordingly,\nKeep Checking The App :)",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic),
+            )
           ],
         ),
       ),
