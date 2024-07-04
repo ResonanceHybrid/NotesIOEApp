@@ -440,6 +440,15 @@ class EngineeringGeologyII extends StatelessWidget {
                     'https://notesioe.com/wp-content/uploads/2023/04/Engineering-Geology-II.pdf');
               },
             ),
+            SizedBox(height: 30),
+            Text(
+              "New Questions Will Be Added Accordingly,\nKeep Checking The App :)",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic),
+            )
           ],
         ),
       ),
