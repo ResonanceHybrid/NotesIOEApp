@@ -51,7 +51,7 @@ class IOENotes extends StatelessWidget {
             ),
             SizedBox(height: 15.0),
             InsideButtons(
-              text: 'Electronics Engineering (BEX)',
+              text: 'Electronics and Information (BEI)',
               icon: Icons.signal_cellular_connected_no_internet_4_bar_outlined,
               onTap: () {
                 Navigator.push(
