@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:ioe/Subject_Pages/AntennaandPropagation.dart';
 import 'package:ioe/Subject_Pages/Applied%20Mechanics%20Dynamics.dart';
 import 'package:ioe/Subject_Pages/Artificial%20Intelligence.dart';
 import 'package:ioe/Subject_Pages/Building%20Technology.dart';
 import 'package:ioe/Subject_Pages/Civil%20Engineering%20Materials.dart';
+import 'package:ioe/Subject_Pages/Communication%20System%20I.dart';
 import 'package:ioe/Subject_Pages/Computational%20Techniques%20in%20Civil%20Engineering.dart';
 import 'package:ioe/Subject_Pages/Computer%20Graphics.dart';
 import 'package:ioe/Subject_Pages/Computer%20Organization%20And%20Architecture.dart';
@@ -79,6 +81,7 @@ import 'package:ioe/Subject_Pages/engineeringmath3.dart';
 import 'package:ioe/Subject_Pages/engineeringphysics.dart';
 import 'package:ioe/Subject_Pages/engineerinmath1.dart';
 import 'package:ioe/Subject_Pages/english.dart';
+import 'package:ioe/Subject_Pages/filterdesign.dart';
 import 'package:ioe/Subject_Pages/microprocessor.dart';
 import 'package:ioe/Subject_Pages/numericalmethod.dart';
 import 'package:ioe/Subject_Pages/objectorientedprogramming.dart.dart';
@@ -714,6 +717,27 @@ class SubjectNavigator {
           MaterialPageRoute(
               builder: (context) => IndustrialPowerDistributionandIllumination(
                   initialTabIndex: 1)),
+        );
+        break;
+      case 'Filter Design':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => FilterDesign(initialTabIndex: 1)),
+        );
+        break;
+      case 'Antenna and Propagation':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => AntennaandPropagation(initialTabIndex: 1)),
+        );
+        break;
+      case 'Communication System I':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => CommunicationSystemI(initialTabIndex: 1)),
         );
         break;
 

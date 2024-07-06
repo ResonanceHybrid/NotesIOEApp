@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:ioe/Subject_Pages/Computer%20Organization%20And%20Architecture.dart';
-import 'package:ioe/Subject_Pages/Computer%20networt%20and%20Security.dart';
-import 'package:ioe/Subject_Pages/Database%20Management%20System.dart';
-import 'package:ioe/Subject_Pages/EngineeringEconomics.dart';
-import 'package:ioe/Subject_Pages/Operating%20System.dart';
-import 'package:ioe/Subject_Pages/filterdesign.dart';
+import 'package:ioe/Subject_Pages/AntennaandPropagation.dart';
+import 'package:ioe/Subject_Pages/Communication%20System%20I.dart';
+import 'package:ioe/Subject_Pages/Embedded%20System.dart';
+import 'package:ioe/Subject_Pages/english.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
 
-class BEISem5 extends StatelessWidget {
+class BEISem6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: OtherPageAppBar(
-        heading: 'BEI Semester 5 Notes',
+        heading: 'BEI Semester 6 Notes',
         rightIcon: Icons.home,
         onRightIconTap: () {
           Navigator.popUntil(context, ModalRoute.withName('/'));
@@ -26,81 +24,56 @@ class BEISem5 extends StatelessWidget {
           children: [
             SizedBox(height: 10.0),
             InsideButtons(
-              text: 'Computer organization and Architecture',
-              icon: Icons.arrow_forward,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) => ComputerOrginzationAndArchitecture(
-                          initialTabIndex: 0)),
-                );
-              },
-            ),
-            SizedBox(height: 10.0),
-            InsideButtons(
-              text: 'Engineering Economics',
+              text: 'Communication English',
               icon: Icons.arrow_forward,
               onTap: () {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
                       builder: (context) =>
-                          EngineeringEconomics(initialTabIndex: 0)),
+                          CommunicationEnglish(initialTabIndex: 0)),
                 );
               },
             ),
             SizedBox(height: 10.0),
             InsideButtons(
-              text: 'Database Management System',
+              text: 'Embedded System',
+              icon: Icons.arrow_forward,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                      builder: (context) => EmbeddedSystem(initialTabIndex: 0)),
+                );
+              },
+            ),
+            SizedBox(height: 10.0),
+            InsideButtons(
+              text: 'Antenna and Propagation',
               icon: Icons.arrow_forward,
               onTap: () {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
                       builder: (context) =>
-                          DatabaseManagementSystem(initialTabIndex: 0)),
+                          AntennaandPropagation(initialTabIndex: 0)),
                 );
               },
             ),
             SizedBox(height: 10.0),
             InsideButtons(
-              text: 'Operating System',
+              text: 'Communication System I',
               icon: Icons.arrow_forward,
               onTap: () {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
                       builder: (context) =>
-                          OperatingSystem(initialTabIndex: 0)),
+                          CommunicationSystemI(initialTabIndex: 0)),
                 );
               },
             ),
-            SizedBox(height: 10.0),
-            InsideButtons(
-              text: 'Filter Design',
-              icon: Icons.arrow_forward,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) => FilterDesign(initialTabIndex: 0)),
-                );
-              },
-            ),
-            SizedBox(height: 10.0),
-            InsideButtons(
-              text: 'Computer Networks',
-              icon: Icons.arrow_forward,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) =>
-                          ComputerNetworkandSecurity(initialTabIndex: 0)),
-                );
-              },
-            ),
+
             // Add other notes options here
           ],
         ),
