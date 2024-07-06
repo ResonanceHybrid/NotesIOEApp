@@ -8,6 +8,7 @@ import 'package:ioe/screens/components/home_content.dart';
 import 'package:ioe/screens/components/notification.dart';
 import 'package:ioe/screens/components/search.dart';
 import 'package:ioe/screens/components/sidebarnav.dart';
+import 'package:in_app_update/in_app_update.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    checkForUpdate();
     // Initialize _pages here
     _pages = [
       HomeContent(),
@@ -37,6 +39,30 @@ class _HomeScreenState extends State<HomeScreen> {
       NotificationPage(),
       DownloadPage(),
     ];
+  }
+
+  Future<void> checkForUpdate() async {
+    print('checking for Update');
+    InAppUpdate.checkForUpdate().then((info) {
+      setState(() {
+        if (info.updateAvailability == UpdateAvailability.updateAvailable) {
+          print('update available');
+          update();
+        } else {
+          print("No Update Available");
+        }
+      });
+    }).catchError((e) {
+      print(e.toString());
+    });
+  }
+
+  void update() async {
+    print('Updating');
+    await InAppUpdate.startFlexibleUpdate();
+    InAppUpdate.completeFlexibleUpdate().then((_) {}).catchError((e) {
+      print(e.toString());
+    });
   }
 
   @override
