@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ioe/IOE_Notes_Page/BCE%20Notes/bcenotespage.dart';
 import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctnotespage.dart';
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beinotespage.dart';
+import 'package:ioe/IOE_Notes_Page/BEL%20Notes/belnotespage.dart';
 
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
@@ -57,7 +59,7 @@ class IOENotes extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => BCTNotes(),
+                    builder: (context) => BEINotes(),
                   ),
                 );
               },
@@ -70,7 +72,7 @@ class IOENotes extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
-                    builder: (context) => BCTNotes(),
+                    builder: (context) => BELNotes(),
                   ),
                 );
               },

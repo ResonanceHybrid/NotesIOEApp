@@ -101,6 +101,9 @@ class _SearchLogicState extends State<SearchLogic> {
     'Information Systems',
     'Applied Mechanics Dynamics',
     'Sanitary Engineering',
+    'Filter Design',
+    'Communication System I',
+    'Antenna and Propagation',
   ];
 
   List<String> filteredSubjects = [];

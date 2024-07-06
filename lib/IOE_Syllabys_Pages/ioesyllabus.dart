@@ -50,7 +50,7 @@ class IOESyllabus extends StatelessWidget {
             ),
             SizedBox(height: 10.0),
             InsideButtons(
-              text: 'Electronics and Communication (BEI)',
+              text: 'Electronics and Information (BEI)',
               icon: Icons.signal_cellular_connected_no_internet_4_bar_outlined,
               onTap: () {
                 Navigator.push(

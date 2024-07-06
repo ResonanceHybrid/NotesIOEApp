@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem1.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem2.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem3.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem4.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem5.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem6.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem7.dart';
-import 'package:ioe/IOE_Notes_Page/BCT%20Notes/bctsem8.dart';
-
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beisem1.dart';
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beisem2.dart';
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beisem3.dart';
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beisem4.dart';
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beisem5.dart';
+import 'package:ioe/IOE_Notes_Page/BEI%20Notes/beisem6.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/otherpageappbar.dart';
 
@@ -36,7 +33,7 @@ class BEINotes extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => BCTSem1()),
+                    CupertinoPageRoute(builder: (context) => BEISem1()),
                   );
                 },
               ),
@@ -47,7 +44,7 @@ class BEINotes extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => BCTSem2()),
+                    CupertinoPageRoute(builder: (context) => BEISem2()),
                   );
                 },
               ),
@@ -58,7 +55,7 @@ class BEINotes extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => BCTSem3()),
+                    CupertinoPageRoute(builder: (context) => BEISem3()),
                   );
                 },
               ),
@@ -69,7 +66,7 @@ class BEINotes extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => BCTSem4()),
+                    CupertinoPageRoute(builder: (context) => BEISem4()),
                   );
                 },
               ),
@@ -80,7 +77,7 @@ class BEINotes extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => BCTSem5()),
+                    CupertinoPageRoute(builder: (context) => BEISem5()),
                   );
                 },
               ),
@@ -91,33 +88,33 @@ class BEINotes extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => BCTSem6()),
+                    CupertinoPageRoute(builder: (context) => BEISem6()),
                   );
                 },
               ),
-              SizedBox(height: 10),
-              InsideButtons(
-                text: 'BEI Semester 7',
-                icon: Icons.battery_6_bar,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    CupertinoPageRoute(builder: (context) => BCTSem7()),
-                  );
-                },
-              ),
-              SizedBox(height: 10),
-              InsideButtons(
-                text: 'BEI Semester 8',
-                icon: Icons.battery_charging_full,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    CupertinoPageRoute(builder: (context) => BCTSem8()),
-                  );
-                },
-              ),
-              SizedBox(height: 10),
+              // SizedBox(height: 10),
+              // InsideButtons(
+              //   text: 'BEI Semester 7',
+              //   icon: Icons.battery_6_bar,
+              //   onTap: () {
+              //     Navigator.push(
+              //       context,
+              //       CupertinoPageRoute(builder: (context) => BCTSem7()),
+              //     );
+              //   },
+              // ),
+              // SizedBox(height: 10),
+              // InsideButtons(
+              //   text: 'BEI Semester 8',
+              //   icon: Icons.battery_charging_full,
+              //   onTap: () {
+              //     Navigator.push(
+              //       context,
+              //       CupertinoPageRoute(builder: (context) => BCTSem8()),
+              //     );
+              //   },
+              // ),
+              // SizedBox(height: 10),
             ],
           ),
         ),
