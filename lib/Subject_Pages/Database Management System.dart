@@ -71,7 +71,7 @@ class DatabaseManagementSystem extends StatelessWidget {
       children: [
         SizedBox(height: 30),
         Text(
-          "Notes Will Be Availabe Shortly\nKeep Using The App :)",
+          "Notes Will Be Availabe Shortly\nKeep Checking The App :)",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontWeight: FontWeight.bold,
