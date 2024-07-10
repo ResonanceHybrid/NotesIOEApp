@@ -19,6 +19,7 @@ import 'package:ioe/Subject_Pages/Design%20of%20RCC%20Structure.dart';
 import 'package:ioe/Subject_Pages/Design%20of%20Steel%20and%20Timber%20Structure.dart';
 import 'package:ioe/Subject_Pages/Digital%20Control%20System.dart';
 import 'package:ioe/Subject_Pages/Digital%20Signal%20Analysis%20and%20Processing.dart';
+import 'package:ioe/Subject_Pages/Digital%20Signal%20Processing.dart';
 import 'package:ioe/Subject_Pages/Distributed%20System.dart';
 import 'package:ioe/Subject_Pages/Electric%20Machines%20II.dart';
 import 'package:ioe/Subject_Pages/Electrical%20Machines%20I.dart';
@@ -746,6 +747,14 @@ class SubjectNavigator {
           context,
           CupertinoPageRoute(
               builder: (context) => CommunicationSystemI(initialTabIndex: 1)),
+        );
+        break;
+      case 'Digital Signal Processing':
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+              builder: (context) =>
+                  DigitalSignalProcessing(initialTabIndex: 1)),
         );
         break;
 

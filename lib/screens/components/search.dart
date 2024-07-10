@@ -28,6 +28,7 @@ class _SearchLogicState extends State<SearchLogic> {
     'Design of Steel and Timber Structure',
     'Digital Control System',
     'Digital Signal Analysis',
+    'Digital Signal Processing',
     'Distributed System',
     'Electric Machines II',
     'Electrical Machines I',

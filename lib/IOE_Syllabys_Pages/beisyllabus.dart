@@ -97,10 +97,10 @@ class BEISyllabus extends StatelessWidget {
               InsideCard(
                 semester: 'Eighth Semester',
                 subjects: [
-                  'Digital Signal Processing (DSP)',
+                  'Digital Signal Processing',
                   'Project (Part B)',
                   'Engineering Professional Practice',
-                  'Information Systems',
+                  'Information System',
                   'Telecommunication',
                   'Energy Environment and Society',
                 ],
