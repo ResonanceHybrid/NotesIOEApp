@@ -408,17 +408,11 @@ class CommunicationEnglish extends StatelessWidget {
           ),
           // Add more references here if needed
           SizedBox(height: 10),
-          SectionHeader(text: 'Language lab'),
+          SectionHeader(text: 'Language lab (30 hours)'),
+
           SizedBox(height: 10),
-          Text(
-            '30 hours',
-          ),
-          SizedBox(height: 10),
-          SectionHeader(text: 'Listening'),
-          SizedBox(height: 10),
-          Text(
-            '12 hours',
-          ),
+          SectionHeader(text: 'Listening (12 hours)'),
+
           SubSection(text: 'Activity I'),
           SubSection(
               text:
@@ -442,11 +436,8 @@ class CommunicationEnglish extends StatelessWidget {
                   'Listening to recorded authentic conversation followed by exercises'),
           SubSection(text: 'Equipment Required: Cassette player or laptop'),
           SizedBox(height: 10),
-          SectionHeader(text: 'Speaking'),
-          SizedBox(height: 10),
-          Text(
-            '18 hours',
-          ),
+          SectionHeader(text: 'Speaking (18 hours)'),
+
           SubSection(text: 'Activity I'),
           SubSection(
               text:
