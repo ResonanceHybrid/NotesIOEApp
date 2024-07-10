@@ -91,6 +91,8 @@ class CommunicationEnglish extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SectionHeader(text: 'Marks Distribution'),
+          SizedBox(height: 10),
           Table(
             border: TableBorder.all(),
             children: [
@@ -349,7 +351,7 @@ class CommunicationEnglish extends StatelessWidget {
 
           SizedBox(height: 10),
           Text(
-            '*There may be minor variation in marks distribution.',
+            'There may be minor variation in marks distribution.',
           ),
 
           SizedBox(height: 10),
