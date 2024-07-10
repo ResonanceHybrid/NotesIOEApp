@@ -106,6 +106,7 @@ class _SearchLogicState extends State<SearchLogic> {
     'Filter Design',
     'Communication System I',
     'Antenna and Propagation',
+    'Wireless Communication',
   ];
 
   List<String> filteredSubjects = [];

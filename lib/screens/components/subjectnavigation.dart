@@ -29,6 +29,7 @@ import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20I.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20II.dart';
 import 'package:ioe/Subject_Pages/Switchgear%20and%20Protection.dart';
 import 'package:ioe/Subject_Pages/Theory%20of%20Structures%20I.dart';
+import 'package:ioe/Subject_Pages/Wireless%20Communication.dart';
 import 'package:ioe/Subject_Pages/electricCircuitandmachines.dart';
 import 'package:ioe/Subject_Pages/Embedded%20System.dart';
 import 'package:ioe/Subject_Pages/Energy%20Environment%20and%20society.dart';
@@ -755,6 +756,13 @@ class SubjectNavigator {
           CupertinoPageRoute(
               builder: (context) =>
                   DigitalSignalProcessing(initialTabIndex: 1)),
+        );
+        break;
+      case 'Wireless Communication':
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+              builder: (context) => WirelessCommunication(initialTabIndex: 1)),
         );
         break;
 
