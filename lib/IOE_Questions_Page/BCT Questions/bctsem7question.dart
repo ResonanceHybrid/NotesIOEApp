@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:ioe/Subject_Pages/Computer%20networt%20and%20Security.dart';
 
-import 'package:ioe/Subject_Pages/Digital%20Signal%20Analysis%20and%20Processing.dart';
+import 'package:ioe/Subject_Pages/Digital%20Signal%20Analysis.dart';
 import 'package:ioe/Subject_Pages/Distributed%20System.dart';
 import 'package:ioe/Subject_Pages/Energy%20Environment%20and%20society.dart';
 

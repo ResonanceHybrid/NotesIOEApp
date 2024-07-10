@@ -369,19 +369,9 @@ class DigitalSignalProcessing extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
-            InsideButtons(
-              text: 'Old Questions',
-              fileSize: "3",
-              icon: Icons.question_answer_outlined,
-              onTap: () {
-                openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/07/Digital-Signal-Processing.pdf');
-              },
-            ),
             SizedBox(height: 30),
             Text(
-              "New Questions Will Be Added Accordingly,\nKeep Checking The App :)",
+              "Questions Will Be Added Accordingly,\nKeep Checking The App :)",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
