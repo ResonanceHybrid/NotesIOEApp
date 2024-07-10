@@ -722,7 +722,7 @@ class SubjectNavigator {
       case 'Industrial Power Distribution and Illumination':
         Navigator.push(
           context,
-          MaterialPageRoute(
+          CupertinoPageRoute(
               builder: (context) => IndustrialPowerDistributionandIllumination(
                   initialTabIndex: 1)),
         );
@@ -730,21 +730,21 @@ class SubjectNavigator {
       case 'Filter Design':
         Navigator.push(
           context,
-          MaterialPageRoute(
+          CupertinoPageRoute(
               builder: (context) => FilterDesign(initialTabIndex: 1)),
         );
         break;
       case 'Antenna and Propagation':
         Navigator.push(
           context,
-          MaterialPageRoute(
+          CupertinoPageRoute(
               builder: (context) => AntennaandPropagation(initialTabIndex: 1)),
         );
         break;
       case 'Communication System I':
         Navigator.push(
           context,
-          MaterialPageRoute(
+          CupertinoPageRoute(
               builder: (context) => CommunicationSystemI(initialTabIndex: 1)),
         );
         break;
