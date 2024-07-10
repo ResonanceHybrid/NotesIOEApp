@@ -86,7 +86,7 @@ class BArchSyllabus extends StatelessWidget {
                   'Building Science II',
                   'Structure III',
                   'Specifications',
-                  'Estimating & Costing',
+                  'Estimating and Costing',
                   'Sociology',
                   'Building Economics',
                 ],

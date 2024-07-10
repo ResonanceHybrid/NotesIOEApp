@@ -95,7 +95,7 @@ class BCESyllabus extends StatelessWidget {
                   'Hydropower Engineering',
                   'Project Engineering',
                   'Transportation Engineering II',
-                  'Estimating & Costing',
+                  'Estimating and Costing',
                   'Design of RCC Structure',
                   'Project (Part I)',
                   'Elective I: Bio-Engineering',
