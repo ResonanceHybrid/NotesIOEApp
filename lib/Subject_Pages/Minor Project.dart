@@ -137,14 +137,7 @@ class MinorProject extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 20),
-            InsideButtons(
-              text: 'Old Questions',
-              icon: Icons.question_answer_outlined,
-              onTap: () {
-                openPDF(context,
-                    'https://notesioe.com/wp-content/uploads/2024/04/AppliedMechanicsOldQues.pdf');
-              },
-            ),
+            
           ],
         ),
       ),

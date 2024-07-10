@@ -427,7 +427,7 @@ class SubjectNavigator {
                   EngineeringProfessional(initialTabIndex: 1)),
         );
         break;
-      case 'Inforamtion Systems':
+      case 'Inforamtion System':
         Navigator.push(
           context,
           CupertinoPageRoute(
@@ -441,7 +441,7 @@ class SubjectNavigator {
               builder: (context) => InternetAndIntranet(initialTabIndex: 1)),
         );
         break;
-      case 'Simulation and Modeling':
+      case 'Simulation and Modelling':
         Navigator.push(
           context,
           CupertinoPageRoute(

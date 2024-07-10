@@ -15,7 +15,7 @@ class SimulationandModeling extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Simulation and Modeling',
+            'Simulation and Modelling',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
