@@ -27,6 +27,7 @@ import 'package:ioe/Subject_Pages/Industrial%20Power%20Distribution%20and%20Illu
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20I.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20II.dart';
 import 'package:ioe/Subject_Pages/Switchgear%20and%20Protection.dart';
+import 'package:ioe/Subject_Pages/Theory%20of%20Structures%20I.dart';
 import 'package:ioe/Subject_Pages/electricCircuitandmachines.dart';
 import 'package:ioe/Subject_Pages/Embedded%20System.dart';
 import 'package:ioe/Subject_Pages/Energy%20Environment%20and%20society.dart';
@@ -520,7 +521,14 @@ class SubjectNavigator {
               builder: (context) => EngineeringGeologyII(initialTabIndex: 1)),
         );
         break;
-      case 'Theory of Structures II':
+      case 'Theory of Structure I':
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+              builder: (context) => TheoryofStructuresI(initialTabIndex: 1)),
+        );
+        break;
+      case 'Theory of Structure II':
         Navigator.push(
           context,
           CupertinoPageRoute(
@@ -586,7 +594,7 @@ class SubjectNavigator {
                   TransportationEngineering(initialTabIndex: 1)),
         );
         break;
-      case 'Irrigation and Drainage Engineering':
+      case 'Irrigation and Drainage':
         Navigator.push(
           context,
           CupertinoPageRoute(

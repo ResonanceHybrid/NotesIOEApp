@@ -15,7 +15,7 @@ class IrrigationandDrainageEngineering extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Irrigation and Drainage Engineering',
+            'Irrigation and Drainage',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,

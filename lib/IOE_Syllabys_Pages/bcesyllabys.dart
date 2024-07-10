@@ -58,7 +58,7 @@ class BCESyllabus extends StatelessWidget {
                 subjects: [
                   'Hydraulics',
                   'Surveying II',
-                  'Theory of Structures I',
+                  'Theory of Structure I',
                   'Probability and Statistics',
                   'Engineering Geology II',
                   'Building Drawing',
