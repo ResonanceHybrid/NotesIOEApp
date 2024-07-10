@@ -86,10 +86,6 @@ class WirelessCommunication extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SectionHeader(text: 'Course Objectives'),
-          SubSection(
-              text:
-                  'To introduce the student to the principles and building blocks of wireless communications.'),
           SectionHeader(text: 'Introduction [2 hours]'),
           SubSection(
               text:

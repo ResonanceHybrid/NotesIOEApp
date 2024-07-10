@@ -27,7 +27,9 @@ import 'package:ioe/Subject_Pages/EngineeringEconomics.dart';
 import 'package:ioe/Subject_Pages/Industrial%20Power%20Distribution%20and%20Illumination.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20I.dart';
 import 'package:ioe/Subject_Pages/Power%20System%20Analysis%20II.dart';
+import 'package:ioe/Subject_Pages/RF%20Microwave%20Engineering.dart';
 import 'package:ioe/Subject_Pages/Switchgear%20and%20Protection.dart';
+import 'package:ioe/Subject_Pages/Telecommunication.dart';
 import 'package:ioe/Subject_Pages/Theory%20of%20Structures%20I.dart';
 import 'package:ioe/Subject_Pages/Wireless%20Communication.dart';
 import 'package:ioe/Subject_Pages/electricCircuitandmachines.dart';
@@ -430,7 +432,7 @@ class SubjectNavigator {
                   EngineeringProfessional(initialTabIndex: 1)),
         );
         break;
-      case 'Inforamtion System':
+      case 'Information System':
         Navigator.push(
           context,
           CupertinoPageRoute(
@@ -763,6 +765,21 @@ class SubjectNavigator {
           context,
           CupertinoPageRoute(
               builder: (context) => WirelessCommunication(initialTabIndex: 1)),
+        );
+        break;
+      case 'RF and Microwave Engineering':
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+              builder: (context) => RFMicrowaveEngineering(initialTabIndex: 1)),
+        );
+        break;
+      case 'Telecommunication':
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+              builder: (context) =>
+                  TelecommunicationCourse(initialTabIndex: 1)),
         );
         break;
 
