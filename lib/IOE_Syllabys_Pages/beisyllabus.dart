@@ -87,7 +87,7 @@ class BEISyllabus extends StatelessWidget {
                 semester: 'Seventh Semester',
                 subjects: [
                   'Artificial Intelligence',
-                  'Digital Signal Analysis and Processing',
+                  'Digital Signal Analysis',
                   'Organization and Management',
                   'RF and Microwave Engineering',
                   'Wireless Communication',
