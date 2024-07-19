@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs_lite.dart';
 import 'package:ioe/screens/UsefulPages/aboutus_page.dart';
-import 'package:ioe/screens/UsefulPages/contactus_page.dart';
 import 'package:ioe/screens/UsefulPages/disclaimer_page.dart';
 import 'package:ioe/screens/UsefulPages/policy_page.dart';
 import 'package:ioe/screens/components/constants.dart';

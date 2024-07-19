@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ioe/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FirebaseAPI {
