@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:ioe/LoginPages/authpage.dart';
 import 'package:ioe/NCE/NECSyllabus.dart';
-import 'package:ioe/Subject_Pages/Software%20Engineering.dart';
-import 'package:ioe/screens/components/ads_state.dart';
+//import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/notification.dart';
 import 'package:ioe/FirebaseAPI/firebase_options.dart';
 import 'package:ioe/FirebaseAPI/firebaseapi.dart';
@@ -15,7 +14,7 @@ import 'package:ioe/IOE_Notes_Page/ioenotes.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/UsefulPages/Articles.dart';
 import 'package:ioe/screens/UsefulPages/News_Results.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 

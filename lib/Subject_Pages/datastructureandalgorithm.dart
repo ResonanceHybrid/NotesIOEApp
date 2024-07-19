@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ioe/screens/components/ads_state.dart';
+//import 'package:ioe/screens/components/ads_state.dart';
 import 'package:ioe/screens/components/constants.dart';
 import 'package:ioe/screens/components/insidebuttons.dart';
 import 'package:ioe/screens/components/pdfviewfunction.dart';
 import 'package:ioe/screens/components/syllabuscontent.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
 class DSA extends StatelessWidget {
   final int initialTabIndex;

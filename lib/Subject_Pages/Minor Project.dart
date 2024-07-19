@@ -137,7 +137,6 @@ class MinorProject extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 20),
-            
           ],
         ),
       ),
