@@ -64,10 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '525268102625',
     projectId: 'newlogin-48398',
     storageBucket: 'newlogin-48398.appspot.com',
-    androidClientId:
-        '525268102625-sgbamn6c0ega06e4gvsuld3363590n13.apps.googleusercontent.com',
-    iosClientId:
-        '525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com',
+    androidClientId: '525268102625-1f5qf9u9jn3h2si5g9v7trs37pos3ln1.apps.googleusercontent.com',
+    iosClientId: '525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com',
     iosBundleId: 'com.example.ioe',
   );
 
@@ -77,10 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '525268102625',
     projectId: 'newlogin-48398',
     storageBucket: 'newlogin-48398.appspot.com',
-    androidClientId:
-        '525268102625-sgbamn6c0ega06e4gvsuld3363590n13.apps.googleusercontent.com',
-    iosClientId:
-        '525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com',
+    androidClientId: '525268102625-1f5qf9u9jn3h2si5g9v7trs37pos3ln1.apps.googleusercontent.com',
+    iosClientId: '525268102625-03uglpq2e18viuhcspocutirj86m3gia.apps.googleusercontent.com',
     iosBundleId: 'com.example.ioe',
   );
 
@@ -93,4 +89,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'newlogin-48398.appspot.com',
     measurementId: 'G-G7XTKSZQXV',
   );
+
 }
